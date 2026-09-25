@@ -205,7 +205,7 @@ To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, the student con
 | **14** | MOVEit Transfer Pre-Auth SQL Injection (CVE-2023-34362) | 2023 | Web / SQLi | Critical | [Progress Software](https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023) |
 | **15** | Citrix NetScaler ADC / Gateway "Citrix Bleed" (CVE-2023-4966) | 2023 | Memory Safety | Critical | [Citrix Security Bulletin](https://support.citrix.com/s/article/CTX579459-netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve20234966-and-cve20234967) |
 | **16** | AT&T Mobility Network Core Configuration Execution Outage | 2024 | Network Config | High | [CNN Business](https://www.cnn.com/2024/02/22/tech/att-cell-service-outage/index.html) |
-| **17** | Toyota Assembly Plants Disk Space Exhaustion Crash | 2023 | Storage / DB | High | [AP News](https://apnews.com/article/japan-toyota-plant-shutdown-system-malfunction-8061e89b276ad4bcaea5d63f03a563f4) |
+| **17** | Toyota Assembly Plants Disk Space Exhaustion Crash | 2023 | Storage / DB | High | [Owler Reports](https://www.owler.com/reports/toyota-motor-corporation/toyota-plants-shut-down-after-database-maintenance/1694036521434) |
 | **18** | OpenSSL Punycode Decoding Buffer Overflow (CVE-2022-3602) | 2022 | Cryptographic Lib | High | [OpenSSL Advisory](https://www.openssl.org/news/secadv/20221101.txt) |
 | **19** | Atlassian Confluence Broken Access Control (CVE-2023-22515) | 2023 | Access Control | Critical | [NIST NVD](https://nvd.nist.gov/vuln/detail/CVE-2023-22515) |
 | **20** | Spring4Shell Core Remote Code Execution (CVE-2022-22965) | 2022 | Framework RCE | Critical | [VMware Spring](https://spring.io/blog/2022/03/31/spring-framework-rce-early-announcement) |
@@ -364,7 +364,7 @@ To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, the student con
 
 #### 17. Toyota Motor Assembly Plants Disk Exhaustion / Maintenance Crash
 - **Category:** General / System Resource Management & High Availability (Storage Exhaustion)
-- **Source Link:** [AP News — Toyota resumes factory operations in Japan after computer glitch](https://apnews.com/article/japan-toyota-plant-shutdown-system-malfunction-8061e89b276ad4bcaea5d63f03a563f4)
+- **Source Link:** [Owler Reports - Toyota: Disk space shortage shuttered Toyota assembly plants](https://www.owler.com/reports/toyota-motor-corporation/toyota-plants-shut-down-after-database-maintenance/1694036521434)
 - **Date / Publicity Evidence:** August 29, 2023 (Incident occurred August 29; detailed technical post-mortem published September 6, 2023).
 - **Description & Technical Root Cause:** Storage volume exhaustion during scheduled database maintenance. Toyota was executing a planned database reorganization and data deletion task on servers managing the just-in-time parts ordering system. The database maintenance process generated large temporary transaction logs that consumed all remaining free storage capacity on the primary disk volume. When disk space reached 100% saturation, the database server encountered a write-abort error and crashed. Because the secondary backup failover system operated on identical storage sizing and attempted to execute the same synchronization script, it also exhausted its disk space and failed, leaving no operational database available.
 - **Severity:** **High** (Total shutdown of domestic automotive manufacturing capacity for the world's largest automaker).
