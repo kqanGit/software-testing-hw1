@@ -181,45 +181,6 @@ To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, the student con
 | **2** | **Misplaced and Detached "Static Testing" Flow:** The diagram features *"Static Testing"* as disconnected nodes floating in the middle, with an incorrect directional arrow linking into *"Test Planning"*. | **ISTQB CTFL v4.0.1 Chapter 3:** Static testing consists of reviewing work products (such as requirements, designs, and user stories) and performing static code analysis without execution. It serves as an early defect prevention technique rather than an arbitrary sub-process feeding into Test Planning. | Clarified that Static Testing operates on requirements, user stories, and specifications during early lifecycle activities (Shift-Left), serving as defect prevention rather than an isolated pre-planning feeder. |
 | **3** | **Complete Omission of Testing/QC Roles:** While the QA branch explicitly defines organizational roles (*"QA Lead, Process QA"*), the QC & Testing branch merely lists procedural steps (1 to 7) without a single human job title. | **ISTQB CTFL v4.0.1 Section 1.4:** The syllabus establishes two fundamental role profiles: the **Test Management role** (responsible for planning, monitoring, and control) and the **Testing role** (e.g., Test Analyst, Test Engineer, Automation Tester). Omitting human job titles violates the core HW01 requirement for a "QA/QC Role Mindmap". | Explicitly mapped human testing roles (Test Management / QA Lead, Test Analyst, Technical Test Analyst, Automation Tester, SDET) to the corresponding activities in the test process. |
 
-#### Student Corrected QA/QC Role & Process Architecture
-
-```mermaid
-flowchart TD
-    subgraph QA["Quality Assurance (QA) — Process-Oriented"]
-        QA_Gov["Process Governance & Standards"]
-        QA_Audit["Quality Audits & Compliance"]
-        QA_Roles["Roles: QA Manager / QA Lead / Process QA"]
-        QA_Gov --- QA_Roles
-        QA_Audit --- QA_Roles
-    end
-
-    subgraph QC["Quality Control (QC) & Testing — Product-Oriented"]
-        subgraph Continuous["Continuous Lifecycle Governance"]
-            TMC["Test Monitoring & Control (Continuous across all activities)"]
-            TMC_Role["Role Profile: Test Management Role (Test Manager / QA Lead)"]
-            TMC --- TMC_Role
-        end
-
-        subgraph ShiftLeft["Early Work Product Verification"]
-            ST["Static Testing (Reviews of requirements, user stories, designs, static code analysis)"]
-            ST_Role["Role Profile: Test Analyst / Technical Test Analyst"]
-            ST --- ST_Role
-        end
-
-        subgraph TestProcess["ISTQB CTFL Dynamic Test Process Activities & Roles"]
-            direction LR
-            A1["1. Test Planning<br/><i>(Test Manager)</i>"] --> A2["2. Test Analysis<br/><i>(Test Analyst)</i>"]
-            A2 --> A3["3. Test Design<br/><i>(Test Analyst / Tech Analyst)</i>"]
-            A3 --> A4["4. Test Implementation<br/><i>(Automation Tester / SDET)</i>"]
-            A4 --> A5["5. Test Execution<br/><i>(Manual / Automation Tester)</i>"]
-            A5 --> A6["6. Test Completion<br/><i>(Test Manager / QA Lead)</i>"]
-        end
-
-        TMC -.->|Continuously monitors & controls| TestProcess
-        ST -.->|Prevents defects before| A3
-    end
-```
-
 *(Note: Full verbatim prompt, artifact image evaluation, and ISTQB reasoning are logged in Section 4 and `AI-02_AI_Audit_Report.md` as Artifact #1).*
 
 ## 2. Software Defects 2022–2026 (20 pts)
