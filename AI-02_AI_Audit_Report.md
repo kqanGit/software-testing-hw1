@@ -31,38 +31,28 @@
 ### Artifact 1 — QA/QC Role & ISTQB Process Mindmap
 
 **(1) Prompt + tool**  
-Tool: Antigravity (Gemini 3.8 Flash)  
+Tool: Antigravity (Gemini 3.8 Flash Image Generator)  
 Timestamp: 12:07 25/09/2026  
 Full prompt:
 
-> Generate a comprehensive mindmap connecting modern QA/QC roles (QA Lead, Manual Tester, Automation Engineer/SDET, Performance Tester) to the fundamental ISTQB software testing process activities.
+> can you generate the image instead of mermaid? (Requesting an infographic mindmap visual covering QA/QC roles and the 7 ISTQB testing process activities)
 
 **(2) AI output**  
-```text
-Software Quality Ecosystem
-├── QA (Quality Assurance - Finding bugs in software)
-│   ├── Manual Tester: Executes test cases after code is deployed
-│   └── QA Automation Engineer: Writes Selenium scripts to replace manual testers
-└── Testing Lifecycle (Process)
-    ├── 1. Test Planning (Write test plan at project kickoff)
-    ├── 2. Test Design & Analysis (Combined: write test cases and prep data)
-    ├── 3. Test Execution (Run test cases, log defects in Jira)
-    └── 4. Test Closure (Sign off release)
-```
+The AI generated the visual infographic image asset `QAQC_Role_Mindmap.png` (embedded in Main Report Section 1.3), rendering a dual-branch structure: "Quality Assurance" on the left and "Quality Control & Testing" with 7 numbered procedural boxes on the right.
 
 **(3) Verdict**  
-INVALID (Contains fundamental conceptual conflations and process omissions per ISTQB Foundation Level standards).
+INVALID (Contains 3 major structural, conceptual, and role-mapping defects when evaluated against the official ISTQB CTFL v4.0.1 syllabus).
 
 **(4) Reasoning**  
-1. *Conflation of QA and QC:* Citing **ISTQB FL v4.0 Section 1.2.2 ("Quality Assurance and Testing")**, QA is strictly process-oriented (preventing defects via process governance and standards), while Testing is part of QC, which is product-oriented (detecting defects). The AI incorrectly defined QA as "finding bugs".
-2. *Omission of Continuous Monitoring & Merging Analysis/Design:* Per **ISTQB FL v4.0 Section 1.4.2 ("Test Activities and Tasks")**, the ISTQB test process comprises 7 distinct activities. The AI omitted *Test Monitoring and Control* (which runs continuously throughout the lifecycle) and merged *Test Analysis* ("what to test") with *Test Design* ("how to test").
-3. *Flawed Role Lifecycle Positioning:* Per **ISTQB FL v4.0 Section 3.1 ("Static Testing Basics")**, testers do not merely execute tests post-deployment; they actively participate in early static reviews of requirements (Shift-Left principle) during the analysis activity.
+1. *Misrepresentation of "Test Monitoring & Control":* The diagram models "2. Monitoring & Control" as an isolated, discrete step placed linearly between Planning and Analysis. According to **ISTQB CTFL v4.0.1 Section 1.4 and Section 5.3**, testing activities do not follow a rigid linear waterfall sequence; Monitoring & Control is an ongoing, continuous activity that spans all test phases to track progress and execute corrective actions.
+2. *Misplaced and Detached "Static Testing" Flow:* The diagram features "Static Testing" as disconnected nodes floating in the middle, with an incorrect directional arrow linking into "Test Planning". According to **ISTQB CTFL v4.0.1 Chapter 3**, static testing consists of reviewing work products (such as requirements, designs, and user stories) and performing static code analysis without execution. It serves as an early defect prevention technique rather than an arbitrary sub-process feeding into Test Planning.
+3. *Complete Omission of Testing/QC Roles:* While the QA branch explicitly defines organizational roles ("QA Lead, Process QA"), the QC & Testing branch merely lists procedural steps (1 to 7) without a single human job title. This violates the core HW01 requirement for a "QA/QC Role Mindmap" and contradicts **ISTQB CTFL v4.0.1 Section 1.4**, which establishes two fundamental role profiles: the **Test Management role** (responsible for planning, monitoring, and control) and the **Testing role** (e.g., Test Analyst, Test Engineer, Automation Tester, SDET).
 
 **(5) Student fix**  
-The student redesigned the conceptual architecture into the verified diagram `QAQC_Role_Mindmap.png`:
-- Formally separated **Quality Assurance (Process Governance, Audits, DoD, QA Manager/Lead)** from **Quality Control & Testing**.
-- Introduced **Static Testing** early in the process lifecycle.
-- Fully mapped the **7 ISTQB Test Activities**: (1) Test Planning, (2) Test Monitoring & Control, (3) Test Analysis, (4) Test Design, (5) Test Implementation, (6) Test Execution, (7) Test Completion, mapping appropriate roles (Test Analyst, Technical Test Analyst, SDET, QA Lead) to each activity.
+The student conducted an in-depth syllabus comparison and established the correct architectural corrections:
+- Re-architected *Test Monitoring & Control* from a discrete sequential box into an ongoing, continuous feedback and governance loop that spans across all testing activities (from planning to completion).
+- Re-anchored *Static Testing* as an early defect prevention practice (Shift-Left) applied across work products (requirements, user stories, designs, code reviews) rather than an isolated input to planning.
+- Explicitly integrated human testing roles per ISTQB Section 1.4, mapping Test Management / QA Lead, Test Analyst, Technical Test Analyst, Automation Tester, and SDET to their corresponding static analysis and dynamic test execution stages.
 
 ### Artifact 2 — [Artifact name]
 
