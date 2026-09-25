@@ -200,8 +200,8 @@ To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, the student con
 | **9** | XZ Utils / liblzma Upstream Supply Chain Backdoor (CVE-2024-3094) | 2024 | Supply Chain | Critical | [NIST NVD](https://nvd.nist.gov/vuln/detail/CVE-2024-3094) |
 | **10** | FAA NOTAM Nationwide Airspace Ground Stop | 2023 | Database Sync | Critical | [FAA Official Statement](https://www.faa.gov/newsroom/faa-notam-statement) |
 | **11** | Southwest Airlines Operational Scheduling Meltdown (SkySolver) | 2022 | Scalability / System | Critical | [IT Jungle Case Study](https://www.itjungle.com/2023/01/11/lessons-from-southwests-it-debacle/) |
-| **12** | UK NATS Flight Trajectory Calculation Exception Crash | 2023 | Exception Handling | High | [UK CAA Review](https://www.caa.co.uk/newsroom/news/caa-publishes-independent-review-into-nats-flight-planning-failure/) |
-| **13** | Change Healthcare Remote Access Ransomware Outage | 2024 | Access Control | Critical | [UnitedHealth Group](https://www.unitedhealthgroup.com/newsroom/2024/2024-02-21-change-healthcare-cyber-response.html) |
+| **12** | UK NATS Flight Trajectory Calculation Exception Crash | 2023 | Exception Handling | High | [TestMax Case Study](https://www.testmax.ai/blog/nats-2023-flight-plan-edge-case-testing-failure) |
+| **13** | Change Healthcare Remote Access Ransomware Outage | 2024 | Access Control | Critical | [The HIPAA Guide](https://www.hipaaguide.net/change-healthcare-data-breach/) |
 | **14** | MOVEit Transfer Pre-Auth SQL Injection (CVE-2023-34362) | 2023 | Web / SQLi | Critical | [Progress Software](https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023) |
 | **15** | Citrix NetScaler ADC / Gateway "Citrix Bleed" (CVE-2023-4966) | 2023 | Memory Safety | Critical | [Citrix Security Bulletin](https://support.citrix.com/s/article/CTX579459-netscaler-adc-and-netscaler-gateway-security-bulletin-for-cve20234966-and-cve20234967) |
 | **16** | AT&T Mobility Network Core Configuration Execution Outage | 2024 | Network Config | High | [CNN Business](https://www.cnn.com/2024/02/22/tech/att-cell-service-outage/index.html) |
@@ -319,7 +319,7 @@ To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, the student con
 
 #### 12. UK National Air Traffic Services (NATS) Trajectory Calculation Exception Crash
 - **Category:** General / Exception Handling & Fail-Safe Architecture (Trajectory Parsing Crash)
-- **Source Link:** [UK Civil Aviation Authority (CAA) Independent Review](https://www.caa.co.uk/newsroom/news/caa-publishes-independent-review-into-nats-flight-planning-failure/)
+- **Source Link:** [NATS 2023: The Valid Flight Plan That Broke UK Airspace | TestMax](https://www.testmax.ai/blog/nats-2023-flight-plan-edge-case-testing-failure)
 - **Date / Publicity Evidence:** August 28, 2023 (Major UK bank holiday outage; preliminary technical report published September 2023; final CAA report March 2024).
 - **Description & Technical Root Cause:** Unhandled parsing exception and fail-safe cascading shutdown in the Flight Plan Reception Suite Automated - Replacement (FPRSA-R) subsystem. A French commercial airliner filed an anomalous flight plan traversing UK airspace that contained two distinct navigational waypoints with identical geographical identifiers (names) located thousands of miles apart, arranged in reverse chronological sequence. When the FPRSA-R trajectory calculation engine attempted to compute the flight path, it entered an unhandled logical state (an impossible backward temporal-spatial loop). To prevent corrupted trajectory data from being delivered to air traffic control radar screens, the software safety mechanism aborted the process. Because the secondary backup system ran identical code and received the identical flight plan from the message queue, it crashed immediately as well.
 - **Severity:** **High** (Air traffic control system failure causing continental European aviation gridlock).
@@ -328,7 +328,7 @@ To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, the student con
 
 #### 13. Change Healthcare / Optum Remote Access MFA Bypass Ransomware Outage
 - **Category:** General / Authentication & Access Control (Citrix Gateway MFA Omission)
-- **Source Link:** [UnitedHealth Group Cyber Response Updates](https://www.unitedhealthgroup.com/newsroom/2024/2024-02-21-change-healthcare-cyber-response.html)
+- **Source Link:** [Change Healthcare Data Breach: 192.7 Million Affected - The HIPAA Guide](https://www.hipaaguide.net/change-healthcare-data-breach/)
 - **Date / Publicity Evidence:** February 21, 2024 (Breach and systems takedown February 21; congressional hearings and technical disclosures May 2024).
 - **Description & Technical Root Cause:** Architectural authentication defect: Absence of Multi-Factor Authentication (MFA) on a legacy external remote-access portal. Threat actors (ALPHV/BlackCat) acquired compromised corporate administrative credentials. They authenticated directly into a legacy Citrix Application Delivery Controller gateway that lacked mandatory MFA enforcement. Once inside, the lack of network microsegmentation and identity boundary controls allowed attackers to move laterally across the entire enterprise domain, harvest administrative domain controller hashes, exfiltrate 6 TB of patient and billing data, and deploy ransomware that encrypted core transactional clearinghouse databases.
 - **Severity:** **Critical** (CVSS v3.1: 9.8 equivalent / Nation-state-level disruption of the critical healthcare payment infrastructure of the United States).
