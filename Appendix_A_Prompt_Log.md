@@ -26,7 +26,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 15 | 11:38 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Okay I have read and clarify all the job you have found to me, almost jobs have AI involved in the process, and that would be a trend in the future. Now I'll give you the images evidence of the remaining post, you have to rename it, put it to the correct folder and update the main document for me okay | Confirm job review, acknowledge AI QA trends, and set instructions for handling remaining 8 screenshots |
 | 16 | 11:41 25/09/2026 | Antigravity (Gemini 3.8 Flash) | [Image submission: 5 screenshots for Postings 3 to 7] | Provide screenshot evidence for Job Postings #3 (TrustedAI), #4 (Viettel), #5 (ANDPAD), #6 (Saritasa), #7 (Saigon Tech) |
 | 17 | 11:44 25/09/2026 | Antigravity (Gemini 3.8 Flash) | [Image submission: 3 screenshots for Postings 8, 9, 10] | Provide screenshot evidence for Job Postings #8 (VBA Tech), #9 (SHB Bank), #10 (YUM! Digital) |
-| 18 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 18 | 11:49 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Please can you change the first three jobs to these images, I want the image has my name in the corner | Replace job screenshots 1–3 with updated versions showing open user profile name dropdown |
+| 19 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
