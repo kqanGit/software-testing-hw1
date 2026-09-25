@@ -54,17 +54,34 @@ The student conducted an in-depth syllabus comparison and established the correc
 - Re-anchored *Static Testing* as an early defect prevention practice (Shift-Left) applied across work products (requirements, user stories, designs, code reviews) rather than an isolated input to planning.
 - Explicitly integrated human testing roles per ISTQB Section 1.4, mapping Test Management / QA Lead, Test Analyst, Technical Test Analyst, Automation Tester, and SDET to their corresponding static analysis and dynamic test execution stages.
 
-### Artifact 2 — [Artifact name]
+### Artifact 2 — AI Explanation of Software Defect (Air Canada Chatbot Case)
 
 **(1) Prompt + tool**  
-Tool: [Name]  
-Timestamp: [HH:MM dd/mm/yyyy]  
-Full prompt: [Paste the exact prompt]
+Tool: Antigravity (Gemini 3.8 Flash)  
+Timestamp: 15:39 25/09/2026  
+Full prompt:
 
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
+> /browser Use browser MCP, find 20 publicized software defects for me, include the AI/LLM requirements. Then for each defect, provide 5 mandatory attributes follow the document, I'll verify all the defect by my self before write them down to the main document
+
+**(2) AI output**  
+When generating the analysis for Defect #1 (*Moffatt v. Air Canada*), the AI generated the following explanation regarding the legal outcome:
+
+> *"In Moffatt v. Air Canada, the passenger filed a landmark class-action lawsuit in the Supreme Court of Canada after the airline's generative AI chatbot provided inaccurate bereavement discount rates. Air Canada argued that the chatbot was an autonomous entity, but the court ruled against the airline, forcing Air Canada to settle out of court for $50,000 in damages and establishing that AI chatbots cannot be governed by ordinary human consumer contract law."*
+
+**(3) Verdict**  
+INVALID (Contains severe factual hallucinations, legal mischaracterizations, and fabricated financial amounts).
+
+**(4) Reasoning**  
+Evaluation against primary tribunal records (*Moffatt v. Air Canada*, 2024 BCCRT 149) and verified reporting (CBC News, Wired) reveals three distinct hallucinations:
+1. *Legal Venue & Nature of Case:* It was not a "landmark class-action lawsuit in the Supreme Court of Canada." It was an individual small-claims action adjudicated by the British Columbia Civil Resolution Tribunal (BC CRT)—an online administrative tribunal.
+2. *Settlement & Financial Damages:* Air Canada did not "settle out of court for $50,000." Air Canada actively contested the claim. Member Christopher Rivers ruled in Moffatt's favor and ordered Air Canada to pay exactly **$812.02 CAD** (comprising $650.88 CAD in fare difference, $36.14 pre-judgment interest, and $125 CRT fees).
+3. *Legal Holding on AI Liability:* The tribunal did not rule that "AI chatbots cannot be governed by ordinary consumer contract law." In fact, the tribunal ruled the exact opposite: Member Rivers firmly dismissed Air Canada's defense that the bot was a "separate legal entity responsible for its own actions," establishing that corporations bear full vicarious liability for misrepresentations made by their automated tools.
+
+**(5) Student fix**  
+The student rejected the AI-generated claims and rewrote Section 2.1, 2.2 (Defect #1), and Section 2.3 of `Main_Report.md` using verified primary legal facts:
+- Stated the exact jurisdiction as the BC Civil Resolution Tribunal (2024 BCCRT 149).
+- Documented the exact award amount of $812.02 CAD.
+- Formulated the precise technical root cause (RAG pipeline lacking schema-bound verification against static tariffs) and correct legal takeaway (vicarious corporate liability for conversational AI agents).
 
 ### Artifact 3 — [Artifact name]
 
