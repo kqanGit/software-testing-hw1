@@ -44,9 +44,11 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 33 | 16:45 25/09/2026 | Antigravity (Gemini 3.8 Flash) | [NATS 2023: The Valid Flight Plan That Broke UK Airspace \| TestMax — TestMax Blog](https://www.testmax.ai/blog/nats-2023-flight-plan-edge-case-testing-failure) update case 12th to this link | User provides verified live case study URL for Defect #12 (UK NATS flight plan glitch) |
 | 34 | 16:50 25/09/2026 | Antigravity (Gemini 3.8 Flash) | [Change Healthcare Data Breach: 192.7 Million Affected - The HIPAA Guide](https://www.hipaaguide.net/change-healthcare-data-breach/) update this link to case 13 | User provides verified live report URL for Defect #13 (Change Healthcare ransomware outage) |
 | 35 | 16:53 25/09/2026 | Antigravity (Gemini 3.8 Flash) | change case 17 to this [Owler Reports - Toyota: Disk space shortage shuttered Toyota assembly plants](https://www.owler.com/reports/toyota-motor-corporation/toyota-plants-shut-down-after-database-maintenance/1694036521434) | User provides verified live report URL for Defect #17 (Toyota disk space shortage outage) |
-| 36 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 36 | 22:46 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Okay let's start requirement 3, list the work I have to do | Outline detailed step-by-step action plan, anti-cheat rules, and deliverables for Requirement 3 (Test a Physical Product) |
+| 37 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
+
 
 
 
