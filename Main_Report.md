@@ -165,9 +165,23 @@
 
 ---
 
-### CLO G9.1 — AI-generated mindmap review
+### 1.3 CLO G9.1 — QA/QC Role & ISTQB Process Mindmap Audit
 
-[Insert the QA/QC role mindmap as PNG or Markdown. Identify and correct at least 3 AI mistakes/omissions with course or ISTQB evidence.]
+#### Mindmap Artifact
+Below is the synthesized, verified mindmap illustrating the core distinction between **Quality Assurance (QA)** and **Quality Control (QC) / Testing**, and mapping key QA/QC engineering roles to the **7 fundamental activities of the ISTQB Test Process**:
+
+![QA/QC Role & ISTQB Process Mindmap](QAQC_Role_Mindmap.png)
+
+#### AI Mindmap Audit & Corrections (G9.1 Understand)
+To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, an AI tool was initially prompted to draw the QA/QC role and testing lifecycle mindmap. A rigorous audit against the **ISTQB Foundation Level (v4.0) Syllabus** identified **3 distinct conceptual mistakes/omissions**, which were subsequently corrected as detailed below:
+
+| # | AI Mistake / Omission | Evidence from ISTQB FL v4.0 Syllabus | Student Correction Applied |
+|---|---|---|---|
+| **1** | **Conflating QA and QC / Defect Detection:** The initial AI output defined QA as *"finding bugs in software"*, treating QA and testing as interchangeable synonyms. | **ISTQB FL v4.0 Section 1.2.2 ("Quality Assurance and Testing"):** QA is process-oriented, focusing on preventing defects through process improvements, standards, and audits. Testing is a primary component of Quality Control (QC), which is product-oriented, focusing on defect detection and evaluating work products. | Clearly segregated **QA (Process governance, defect prevention)** from **QC/Testing (Product evaluation, defect detection)**. Reclassified testing roles under the QC branch while QA leads span both process governance and verification. |
+| **2** | **Omitting "Test Monitoring & Control" and Merging "Analysis" with "Design":** The AI used an oversimplified 4-stage waterfall cycle, omitting Test Monitoring & Control and merging Test Analysis with Test Design. | **ISTQB FL v4.0 Section 1.4.2 ("Test Activities and Tasks"):** The ISTQB test process explicitly consists of 7 distinct activities. *Test Monitoring and Control* is an ongoing activity that evaluates progress against exit criteria. *Test Analysis* ("what to test" - identifying test conditions) is distinct from *Test Design* ("how to test" - specifying test cases and test data). | Restructured into the official 7 ISTQB activities: (1) Planning, (2) Monitoring & Control (continuous), (3) Analysis, (4) Design, (5) Implementation, (6) Execution, and (7) Completion. |
+| **3** | **Misclassifying Tester Engagement as strictly Post-Code Dynamic Execution:** The AI stated that Manual Testers only *"execute test cases after code is deployed"*. | **ISTQB FL v4.0 Section 3.1 ("Static Testing Basics") & Section 1.4.2:** Testers must engage early (Shift-Left principle) during the Requirements and Analysis phases by performing **Static Testing** (reviews of user stories, specifications, and architecture) to catch defects before any code is built. | Added **Static Testing (Reviews of requirements/user stories)** to the Test Analyst role during the Analysis phase, and distinguished dynamic execution from early defect prevention. |
+
+*(Note: Full verbatim AI prompt, raw output, and ISTQB reasoning are logged in Section 4 and `AI-02_AI_Audit_Report.md` as Artifact #1).*
 
 ## 2. Software Defects 2022–2026 (20 pts)
 

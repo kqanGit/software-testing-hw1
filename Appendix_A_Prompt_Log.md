@@ -27,7 +27,10 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 16 | 11:41 25/09/2026 | Antigravity (Gemini 3.8 Flash) | [Image submission: 5 screenshots for Postings 3 to 7] | Provide screenshot evidence for Job Postings #3 (TrustedAI), #4 (Viettel), #5 (ANDPAD), #6 (Saritasa), #7 (Saigon Tech) |
 | 17 | 11:44 25/09/2026 | Antigravity (Gemini 3.8 Flash) | [Image submission: 3 screenshots for Postings 8, 9, 10] | Provide screenshot evidence for Job Postings #8 (VBA Tech), #9 (SHB Bank), #10 (YUM! Digital) |
 | 18 | 11:49 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Please can you change the first three jobs to these images, I want the image has my name in the corner | Replace job screenshots 1–3 with updated versions showing open user profile name dropdown |
-| 19 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 19 | 11:51 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Let's move to to part B | Generate and audit QA/QC role & ISTQB process mindmap for CLO G9.1 (Requirement 1 Part B) |
+| 20 | 12:01 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Can you explain again the purpose of this mindmap? | Explain academic purpose and course learning outcome (CLO G9.1) of the QA/QC mindmap audit |
+| 21 | 12:07 25/09/2026 | Antigravity (Gemini 3.8 Flash) | can you generate the image instead of mermaid? | Request generating image asset for the QA/QC mindmap instead of Mermaid code |
+| 22 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 

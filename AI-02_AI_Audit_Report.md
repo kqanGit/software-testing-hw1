@@ -28,26 +28,41 @@
 
 ## 3. Audit Entries — one per AI-generated artifact
 
-### Artifact 1 — [Artifact name]
+### Artifact 1 — QA/QC Role & ISTQB Process Mindmap
 
 **(1) Prompt + tool**  
-Tool: [Name]  
-Timestamp: [HH:MM dd/mm/yyyy]  
+Tool: Antigravity (Gemini 3.8 Flash)  
+Timestamp: 12:07 25/09/2026  
 Full prompt:
 
-> [Paste the exact prompt]
+> Generate a comprehensive mindmap connecting modern QA/QC roles (QA Lead, Manual Tester, Automation Engineer/SDET, Performance Tester) to the fundamental ISTQB software testing process activities.
 
 **(2) AI output**  
-[Paste the full output verbatim, or include a labeled screenshot in the report.]
+```text
+Software Quality Ecosystem
+├── QA (Quality Assurance - Finding bugs in software)
+│   ├── Manual Tester: Executes test cases after code is deployed
+│   └── QA Automation Engineer: Writes Selenium scripts to replace manual testers
+└── Testing Lifecycle (Process)
+    ├── 1. Test Planning (Write test plan at project kickoff)
+    ├── 2. Test Design & Analysis (Combined: write test cases and prep data)
+    ├── 3. Test Execution (Run test cases, log defects in Jira)
+    └── 4. Test Closure (Sign off release)
+```
 
 **(3) Verdict**  
-[VALID / INVALID / INCOMPLETE]
+INVALID (Contains fundamental conceptual conflations and process omissions per ISTQB Foundation Level standards).
 
 **(4) Reasoning**  
-[Explain in 2–5 sentences and cite the matching course slide, ISTQB section, or technical reference.]
+1. *Conflation of QA and QC:* Citing **ISTQB FL v4.0 Section 1.2.2 ("Quality Assurance and Testing")**, QA is strictly process-oriented (preventing defects via process governance and standards), while Testing is part of QC, which is product-oriented (detecting defects). The AI incorrectly defined QA as "finding bugs".
+2. *Omission of Continuous Monitoring & Merging Analysis/Design:* Per **ISTQB FL v4.0 Section 1.4.2 ("Test Activities and Tasks")**, the ISTQB test process comprises 7 distinct activities. The AI omitted *Test Monitoring and Control* (which runs continuously throughout the lifecycle) and merged *Test Analysis* ("what to test") with *Test Design* ("how to test").
+3. *Flawed Role Lifecycle Positioning:* Per **ISTQB FL v4.0 Section 3.1 ("Static Testing Basics")**, testers do not merely execute tests post-deployment; they actively participate in early static reviews of requirements (Shift-Left principle) during the analysis activity.
 
 **(5) Student fix**  
-[Provide the corrected artifact and identify/highlight changes.]
+The student redesigned the conceptual architecture into the verified diagram `QAQC_Role_Mindmap.png`:
+- Formally separated **Quality Assurance (Process Governance, Audits, DoD, QA Manager/Lead)** from **Quality Control & Testing**.
+- Introduced **Static Testing** early in the process lifecycle.
+- Fully mapped the **7 ISTQB Test Activities**: (1) Test Planning, (2) Test Monitoring & Control, (3) Test Analysis, (4) Test Design, (5) Test Implementation, (6) Test Execution, (7) Test Completion, mapping appropriate roles (Test Analyst, Technical Test Analyst, SDET, QA Lead) to each activity.
 
 ### Artifact 2 — [Artifact name]
 
