@@ -167,8 +167,8 @@
 
 ### 1.3 CLO G9.1 — QA/QC Role & ISTQB Process Mindmap Audit
 
-#### Mindmap Artifact
-Below is the synthesized, verified mindmap illustrating the core distinction between **Quality Assurance (QA)** and **Quality Control (QC) / Testing**, and mapping key QA/QC engineering roles to the **7 fundamental activities of the ISTQB Test Process**:
+#### AI Mindmap Artifact
+Below is the initial AI-generated mindmap (`QAQC_Role_Mindmap.png`) representing Quality Assurance (QA) versus Quality Control (QC) and the testing process activities:
 
 ![QA/QC Role & ISTQB Process Mindmap](QAQC_Role_Mindmap.png)
 
@@ -180,6 +180,45 @@ To fulfill the Bloom-AI Level **G9.1 (Understand)** requirement, the student con
 | **1** | **Misrepresentation of "Test Monitoring & Control":** The diagram models *"2. Monitoring & Control"* as an isolated, discrete step placed linearly between Planning and Analysis. | **ISTQB CTFL v4.0.1 Section 1.4 & Section 5.3:** Testing activities do not follow a rigid linear waterfall sequence; Monitoring & Control is an ongoing, continuous activity that spans all test phases to track progress and execute corrective actions. | Modeled Test Monitoring & Control as an overarching, continuous feedback and governance loop that spans across all testing activities (from planning to completion) rather than a linear standalone block. |
 | **2** | **Misplaced and Detached "Static Testing" Flow:** The diagram features *"Static Testing"* as disconnected nodes floating in the middle, with an incorrect directional arrow linking into *"Test Planning"*. | **ISTQB CTFL v4.0.1 Chapter 3:** Static testing consists of reviewing work products (such as requirements, designs, and user stories) and performing static code analysis without execution. It serves as an early defect prevention technique rather than an arbitrary sub-process feeding into Test Planning. | Clarified that Static Testing operates on requirements, user stories, and specifications during early lifecycle activities (Shift-Left), serving as defect prevention rather than an isolated pre-planning feeder. |
 | **3** | **Complete Omission of Testing/QC Roles:** While the QA branch explicitly defines organizational roles (*"QA Lead, Process QA"*), the QC & Testing branch merely lists procedural steps (1 to 7) without a single human job title. | **ISTQB CTFL v4.0.1 Section 1.4:** The syllabus establishes two fundamental role profiles: the **Test Management role** (responsible for planning, monitoring, and control) and the **Testing role** (e.g., Test Analyst, Test Engineer, Automation Tester). Omitting human job titles violates the core HW01 requirement for a "QA/QC Role Mindmap". | Explicitly mapped human testing roles (Test Management / QA Lead, Test Analyst, Technical Test Analyst, Automation Tester, SDET) to the corresponding activities in the test process. |
+
+#### Student Corrected QA/QC Role & Process Architecture
+
+```mermaid
+flowchart TD
+    subgraph QA["Quality Assurance (QA) — Process-Oriented"]
+        QA_Gov["Process Governance & Standards"]
+        QA_Audit["Quality Audits & Compliance"]
+        QA_Roles["Roles: QA Manager / QA Lead / Process QA"]
+        QA_Gov --- QA_Roles
+        QA_Audit --- QA_Roles
+    end
+
+    subgraph QC["Quality Control (QC) & Testing — Product-Oriented"]
+        subgraph Continuous["Continuous Lifecycle Governance"]
+            TMC["Test Monitoring & Control (Continuous across all activities)"]
+            TMC_Role["Role Profile: Test Management Role (Test Manager / QA Lead)"]
+            TMC --- TMC_Role
+        end
+
+        subgraph ShiftLeft["Early Work Product Verification"]
+            ST["Static Testing (Reviews of requirements, user stories, designs, static code analysis)"]
+            ST_Role["Role Profile: Test Analyst / Technical Test Analyst"]
+            ST --- ST_Role
+        end
+
+        subgraph TestProcess["ISTQB CTFL Dynamic Test Process Activities & Roles"]
+            direction LR
+            A1["1. Test Planning<br/><i>(Test Manager)</i>"] --> A2["2. Test Analysis<br/><i>(Test Analyst)</i>"]
+            A2 --> A3["3. Test Design<br/><i>(Test Analyst / Tech Analyst)</i>"]
+            A3 --> A4["4. Test Implementation<br/><i>(Automation Tester / SDET)</i>"]
+            A4 --> A5["5. Test Execution<br/><i>(Manual / Automation Tester)</i>"]
+            A5 --> A6["6. Test Completion<br/><i>(Test Manager / QA Lead)</i>"]
+        end
+
+        TMC -.->|Continuously monitors & controls| TestProcess
+        ST -.->|Prevents defects before| A3
+    end
+```
 
 *(Note: Full verbatim prompt, artifact image evaluation, and ISTQB reasoning are logged in Section 4 and `AI-02_AI_Audit_Report.md` as Artifact #1).*
 
