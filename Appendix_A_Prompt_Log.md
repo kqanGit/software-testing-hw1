@@ -32,7 +32,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 21 | 12:07 25/09/2026 | Antigravity (Gemini 3.8 Flash) | can you generate the image instead of mermaid? | Request generating image asset for the QA/QC mindmap instead of Mermaid code |
 | 22 | 14:33 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Based on my study of the official ISTQB CTFL v4.0.1 syllabus, I have evaluated the previously generated QA/QC role mindmap diagram and identified the following three major defects: 1. Misrepresentation of "Test Monitoring & Control"... 2. Misplaced and Detached "Static Testing" Flow... 3. Complete Omission of Testing/QC Roles... | Student critical evaluation of QAQC_Role_Mindmap.png identifying 3 ISTQB CTFL v4.0.1 defects for CLO G9.1 |
 | 23 | 15:22 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Student Corrected QA/QC Role & Process Architecture please remove this | Remove student corrected Mermaid architecture diagram from Section 1.3 of Main_Report.md |
-| 24 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 24 | 15:26 25/09/2026 | Antigravity (Gemini 3.8 Flash) | update that check list of requirement 1 | Check off all completed tasks for Requirement 1 in checklist documents |
+| 25 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
