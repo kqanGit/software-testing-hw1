@@ -8,13 +8,13 @@
 
 | Field | Value |
 |---|---|
-| Student name (printed) | [Complete] |
-| Student ID | [Complete] |
-| Class / Cohort | [Complete] |
+| Student name (printed) | Bùi Minh Quân |
+| Student ID | 23120337 |
+| Class / Cohort | Computer Science / IT (23CLC) |
 | Assignment ID | HW01-AI |
-| Assignment date | [Complete] |
-| AI tool(s) used | [List every tool used] |
-| AI used for this assignment? | [ ] Yes  [ ] No |
+| Assignment date | 26/09/2026 |
+| AI tool(s) used | Antigravity (Gemini 3.8 Flash), Codex (GPT-6) |
+| AI used for this assignment? | [x] Yes  [ ] No |
 
 ## 2. Instructions
 
@@ -83,13 +83,47 @@ The student rejected the AI-generated claims and rewrote Section 2.1, 2.2 (Defec
 - Documented the exact award amount of $812.02 CAD.
 - Formulated the precise technical root cause (RAG pipeline lacking schema-bound verification against static tariffs) and correct legal takeaway (vicarious corporate liability for conversational AI agents).
 
-### Artifact 3 — [Artifact name]
+### Artifact 3 — AI-Generated Test Cases for Xiaomi Mi Smart LED Desk Lamp
 
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
+**(1) Prompt + tool**  
+Tool: Antigravity (Gemini 3.8 Flash)  
+Timestamp: 22:46 25/09/2026  
+Full prompt:
+
+> Okay let's start requirement 3, list the work I have to do (and generate test cases for the Xiaomi Mi Smart LED Desk Lamp)
+
+**(2) AI output**  
+The AI initially generated 15 standard, predominantly software- and app-centric test cases:
+1. Turn on/off via app power button.
+2. Adjust brightness slider in app from 0% to 100%.
+3. Set scheduled on/off timer in app.
+4. Voice assistant command integration ("Turn lamp to daylight").
+5. Connect lamp to 2.4 GHz Wi-Fi router.
+6. Connect lamp with invalid Wi-Fi password (verify error handling).
+7. Reconnect after router power cycle.
+8. Factory reset via app unpair button.
+9. Single-click physical knob to turn on/off.
+10. Rotate physical knob to adjust brightness.
+11. Press and rotate physical knob to adjust color temperature.
+12. Double-click physical knob to activate pomodoro timer.
+13. App notification when firmware update is available.
+14. Perform OTA firmware update via app.
+15. Multi-device sync (verify two phones reflect same lamp state).
+
+**(3) Verdict**  
+INCOMPLETE (Lacks physical, electrical transient, thermodynamic, and optical biological safety edge cases).
+
+**(4) Reasoning**  
+Evaluation against **ISTQB CTFL v4.0.1 Section 4.2 (Black-Box Test Techniques — Equivalence Partitioning & Boundary Value Analysis)** and Bloom-AI Level **G9.3 (Analyze)** demonstrates that commercial LLMs suffer from an "App-Centric Software Bias":
+- The AI treats the physical smart lamp as if it were a purely virtual software application or Web API.
+- The AI completely omits real-world physical embodiment constraints: contact bounce on the DC barrel jack (<200ms power interruption), physical rotary encoder interrupt race conditions (simultaneous depress and high-speed spin past mechanical limits), thermodynamic heat dissipation causing hinge cantilever friction sagging over time, and optical PWM stroboscopic ripple under IEEE 1789-2015 standards.
+
+**(5) Student fix**  
+The student rejected 4 redundant app/cloud test cases and engineered **4 critical physical hardware edge cases** (documented as TC-12 through TC-15 in Section 3.3 of `Main_Report.md`):
+- **TC-12 (Edge Case 1):** Rapid DC barrel plug contact chatter (<200ms power bounce) to test microcontroller Brownout Detection (BOD) and driver latch-up prevention.
+- **TC-13 (Edge Case 2):** Rotary encoder boundary overflow and simultaneous depress race condition to validate quadrature decoding ISR clamping.
+- **TC-14 (Edge Case 3):** Sustained 100% lumen thermal dissipation and hinge cantilever friction retention under continuous 60-minute heat load.
+- **TC-15 (Edge Case 4):** Optical stroboscopic flicker and PWM ripple compliance using 240fps slow-motion capture per IEEE 1789-2015 ocular health guidelines.
 
 ### Artifact 4 — [Artifact name]
 

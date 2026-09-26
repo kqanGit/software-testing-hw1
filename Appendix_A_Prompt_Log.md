@@ -1,9 +1,9 @@
 # Appendix A — AI Prompt Log
 
-**Student:** [Full name]  
-**Student ID:** [Student ID]  
+**Student:** Bùi Minh Quân  
+**Student ID:** 23120337  
 **Assignment:** HW01-AI  
-**Timezone for timestamps:** [Specify]
+**Timezone for timestamps:** UTC+7 (Indochina Time)
 
 Record every AI prompt used for this assignment, including the exact wording and actual send time in `HH:MM dd/mm/yyyy` format. Identify the AI tool. Do not reconstruct prompts from memory as verbatim text or invent timestamps. Add rows as you work. Keep full AI outputs in the AI-02 audit report for each generated artifact, as required by the course.
 
@@ -45,7 +45,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 34 | 16:50 25/09/2026 | Antigravity (Gemini 3.8 Flash) | [Change Healthcare Data Breach: 192.7 Million Affected - The HIPAA Guide](https://www.hipaaguide.net/change-healthcare-data-breach/) update this link to case 13 | User provides verified live report URL for Defect #13 (Change Healthcare ransomware outage) |
 | 35 | 16:53 25/09/2026 | Antigravity (Gemini 3.8 Flash) | change case 17 to this [Owler Reports - Toyota: Disk space shortage shuttered Toyota assembly plants](https://www.owler.com/reports/toyota-motor-corporation/toyota-plants-shut-down-after-database-maintenance/1694036521434) | User provides verified live report URL for Defect #17 (Toyota disk space shortage outage) |
 | 36 | 22:46 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Okay let's start requirement 3, list the work I have to do | Outline detailed step-by-step action plan, anti-cheat rules, and deliverables for Requirement 3 (Test a Physical Product) |
-| 37 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 37 | 15:04 26/09/2026 | Antigravity (Gemini 3.8 Flash) | I choose my lamp, it's a Xiaomi Mi Smart LED Desk Lamp, here is the picture of that lamp with my ID card, and the model number, pls fill to my document | Provide physical device details (Xiaomi Mi Smart LED Desk Lamp, MJTD01YL, SN: 16058/****5797) and anti-cheat photo with student ID card (23120337) |
+| 38 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
