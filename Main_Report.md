@@ -420,100 +420,99 @@ Because their training corpus contains thousands of corporate class-action lawsu
 
 ## 3. Physical Product Test Design and Execution (rubric: 25 pts)
 
-### 3.1 Device Identification & Anti-Cheat Evidence
+### 3.1 Device Information & Photo Evidence
 
-To fulfill the course requirement of testing a real, physical household hardware product owned and operated by the student, the **Xiaomi Mi Smart LED Desk Lamp** was selected.
+For this requirement, I tested a physical household device that I own and use daily: the **Xiaomi Mi Smart LED Desk Lamp**.
 
-#### Device Hardware Specifications
-* **Product Name:** Xiaomi Mi Smart LED Desk Lamp
-* **Brand:** Xiaomi (Ecosystem partner: Yeelight / Mijia)
+#### Device Specifications
+* **Device Name:** Xiaomi Mi Smart LED Desk Lamp
+* **Brand:** Xiaomi (Mijia / Yeelight ecosystem)
 * **Model Number:** MJTD01YL
-* **Date of Manufacture:** September 2018 (`2018.09` per base regulatory label)
-* **Serial Number (SN):** `16058/****5797` *(Full: `16058/01265797` with the middle four characters `0126` masked per course privacy guidelines)*
+* **Manufacture Date:** September 2018 (`2018.09` on bottom sticker)
+* **Serial Number (SN):** `16058/****5797` *(Middle 4 characters `0126` masked for privacy)*
 * **MAC Address:** `7C:49:EB:CD:9B:7C`
-* **Rated Input / Power:** 12V DC ⎓ 0.5A (6W nominal rated power)
-* **Color Temperature Range:** 2700K (Warm Yellow) – 6500K (Cool Daylight)
-* **Luminous Flux:** Up to 300 lumens; Color Rendering Index (CRI): Ra 83
-* **Wireless Connectivity:** Wi-Fi IEEE 802.11 b/g/n 2.4 GHz
-* **Physical Control Interface:** Single multi-function clickable rotary dial (encoder knob) on base
-* **Mechanical Structure:** All-metal aluminum folding cantilever arm with optical axis hinge (0° to 135° tilt adjustment) and visible red silicone-sheathed wiring harness
-* **Student Owner:** Bùi Minh Quân (Student ID: **23120337**, Faculty of Information Technology, VNUHCM - University of Science)
+* **Power Input:** 12V DC, 0.5A (6W)
+* **Light Range:** 2700K (Warm Yellow) to 6500K (Cool White), up to 300 lumens
+* **Controls:** 1 multi-function clickable knob on the base (click, rotate, press-and-rotate, double-click)
+* **Mechanical Build:** Folding aluminum arm (0° to 135° tilt) with an external red cable
+* **Student Owner:** Bùi Minh Quân (Student ID: **23120337**, Faculty of Information Technology, HCMUS)
 
-#### Physical Verification Evidence
+#### Photo Evidence
 
-1. **Physical Device with Student ID Card in Frame:**
-   The photo below displays the operational Xiaomi desk lamp with the student's authentic Student ID Card (`23120337 - BÙI MINH QUÂN`) positioned directly on the lamp's circular weighted base next to the rotary control knob.
+1. **Lamp with Student ID Card:**  
+   The photo below shows the real lamp turned on, with my student ID card (`23120337 - BÙI MINH QUÂN`) placed directly on the base next to the knob.
 
    ![Xiaomi Mi Smart LED Desk Lamp with Student ID Card](Device_Evidence/device_photo_with_student_id.png)
 
-2. **Base Regulatory & Serial Number Label:**
-   The underside label confirms the manufacturing date (`2018.09`), MAC address (`7C49EBCD9B7C`), and serial number (`SN: 16058/01265797`).
+2. **Base Regulatory & Serial Number Sticker:**  
+   The label on the underside confirms the production date (`2018.09`), MAC address, and serial number.
 
    ![Xiaomi Desk Lamp Base Serial Label](Device_Evidence/device_serial_label.png)
 
 ---
 
-### 3.2 CLO G9.3 — AI Test Case Generation & Missed Edge Cases Analysis (Bloom Level: Analyze)
+### 3.2 CLO G9.3 — AI Test Case Analysis & Missed Edge Cases (Bloom Level: Analyze)
 
-When prompted to generate test cases for a "smart desk lamp," commercial AI tools (such as ChatGPT, Claude, and Gemini) overwhelmingly generate conventional, high-level software and UI-focused test scenarios:
-* Turning the lamp on/off via the smartphone app slider.
-* Testing user login with invalid Wi-Fi credentials.
-* Testing basic scheduling routines (e.g., auto-off at midnight).
-* Testing cloud voice assistant commands ("Alexa, turn off lamp").
+When I asked AI models (ChatGPT, Claude, Gemini) to generate test cases for a smart desk lamp, they almost exclusively focused on **phone app features**:
+* Turning the lamp on/off using the app button.
+* Dragging the brightness slider in the app.
+* Setting a schedule (e.g., turn off at 11 PM).
+* Testing wrong Wi-Fi passwords.
+* Testing voice commands ("Hey Google, turn on lamp").
 
-#### Root Cause of AI Blind Spots in Physical Hardware QA
-AI models lack **physical embodiment, thermodynamic context, and real-world electrical domain models**. Commercial LLMs treat a smart device as an abstract software API, failing to comprehend that an IoT desk lamp is an electromechanical assembly subject to contact bounce, heat dissipation limits, mechanical hinge friction decay, and optical biological safety standards.
+#### Why Does AI Miss Physical Hardware Bugs?
+AI models think like software developers testing a mobile screen or a web API. They don't have a physical body, so they forget that a real household lamp deals with real-world physics: loose electrical plugs, heat buildup, physical hinges getting loose over time, and eye-straining light flicker.
 
-To satisfy the **CLO G9.3 (Analyze)** requirement, the student conducted a rigorous domain analysis and identified **4 critical physical edge cases that the AI completely omitted**:
+To fulfill the **CLO G9.3 (Analyze)** requirement, I identified **4 critical physical edge cases** that the AI completely overlooked:
 
-| # | Missed Physical Edge Case | Physical / Electrical Root Cause Ignored by AI | Testing & Quality Impact |
+| # | Missed Physical Edge Case | What AI Overlooks | Why This Test Matters in Real Life |
 |:---:|---|---|---|
-| **1** | **Rapid DC Barrel Plug Contact Chatter (<200ms Power Bounce)** | AI assumes power transitions are clean binary signals ($0$ or $1$). In real household usage, loose sockets or cord snags produce rapid intermittent disconnections (5–10 bounces in <200ms). Without testing Microcontroller Brownout Detection (BOD), contact chatter can corrupt flash memory, latch up the LED driver IC, or freeze the MCU in an unrecoverable hung state. | Verifies MCU BOD circuit triggers clean hardware resets rather than executing undefined instructions or latching high current through the LED array. |
-| **2** | **Rotary Encoder Boundary Overflow & Simultaneous Depress Race Condition** | AI models test software sliders with simple integer bounds (0–100). They overlook physical rotary encoders that generate asynchronous two-phase quadrature pulses. If a user firmly presses the knob down while violently spinning past the 6500K stop limit, poorly debounced interrupt service routines (ISRs) can trigger integer overflow (wrapping cold white back to warm yellow) or generate race conditions between the toggle interrupt and dimming interrupt. | Validates interrupt priority handling, software debounce windows, and boundary clamping in the local microcontroller firmware. |
-| **3** | **Sustained Maximum Lumen Thermal Dissipation & Hinge Cantilever Sagging** | AI models do not model physics or thermodynamics. Operating 6W of densely packed LEDs at 100% brightness continuously generates significant localized heat along the aluminum arm. Thermal expansion can degrade the friction torque of the mechanical hinge washers, causing the arm to slowly sag downward under gravity at a 90° cantilever angle. | Ensures the mechanical hinge friction washers retain specified holding torque under continuous maximum operating temperatures (<50°C housing). |
-| **4** | **Optical Stroboscopic Flicker & PWM Ripple under High-Speed Capture (IEEE 1789-2015)** | AI models evaluate lighting purely as a binary "light is on" condition. Cheap or degraded PWM drivers produce invisible high-frequency stroboscopic flicker (100Hz–1kHz) that causes ocular fatigue, headaches, and migraines. Testing requires high-speed optical capture (240fps slow-motion) across dimming levels to verify ripple suppression. | Validates patented RC filter circuit compliance with IEEE 1789-2015 standards for zero-risk optical biological safety. |
+| **1** | **Wiggling / Loose Power Plug (<200ms rapid disconnects)** | AI assumes power is either 100% ON or 100% OFF. It forgets that cords get kicked or wall plugs get loose. | When a plug wiggles, power cuts on and off several times in a split second. A good device must reset cleanly without freezing, glitching, or damaging its internal chips. |
+| **2** | **Pushing Down and Vigorously Spinning the Knob Past the Limit** | AI assumes users turn knobs gently. It doesn't test violent, rapid inputs or pressing while spinning past the maximum stop. | Rapid spinning can confuse the knob's internal sensor. If the code isn't guarded, the color temperature could glitch, wrap from cool white back to yellow, or lock up the controls. |
+| **3** | **1 Hour at 100% Brightness (Heat & Arm Sagging Test)** | AI doesn't understand thermodynamics or gravity. It assumes the lamp arm stays in place forever. | LEDs get warm. If the lamp runs at full power for 60 minutes, the heat can warm up the metal hinge and soften its friction pads, causing the heavy arm to slowly droop down. |
+| **4** | **Invisible Light Flicker (Slow-Motion 240fps Camera Test)** | AI assumes that if light shines, quality is fine. It cannot "see" high-speed optical flicker. | Cheap or poorly regulated LED lights flicker hundreds of times per second. Even if invisible to the eye, this causes eye strain and headaches. A slow-motion camera check verifies steady, eye-safe light (IEEE 1789 standard). |
 
 ---
 
-### 3.3 Comprehensive Physical Product Test Suite (15 Test Cases)
+### 3.3 Complete 15 Test Cases Suite
 
-The complete test suite comprises **15 device-specific test cases** designed across physical controls, mechanical stability, electrical resilience, smart ecosystem features, and physical hardware edge cases.
+Here is the complete set of **15 test cases** designed for the lamp, covering physical knob controls, moving parts, power resilience, app connectivity, and the 4 physical edge cases.
 
-*(Note: The full companion Excel workbook `Physical_Product_Test_Cases.xlsx` is provided in the submission package).*
+*(The companion Excel sheet `Physical_Product_Test_Cases.xlsx` contains this exact test suite).*
 
-| Test ID | Category | Test Objective | Input / Preconditions | Execution Steps | Expected Result | Actual Result & Verdict |
+| Test ID | Category | Test Objective | Preconditions | Steps | Expected Result | Actual Result & Verdict |
 |:---:|:---:|---|---|---|---|:---:|
-| **TC-01** | Physical Controls | Verify physical power toggle via rotary knob single-click | Lamp connected to 12V DC power; initial state: Standby (OFF) | 1. Press down rotary knob once firmly.<br>2. Observe LED light strip.<br>3. Press rotary knob firmly a second time.<br>4. Observe LED light strip. | 1. Lamp turns ON immediately (<100ms) restoring previous brightness.<br>2. Second press cleanly transitions lamp to Standby (OFF). | **PASS**<br>*(Executed: Lamp turned on immediately on 1st click and turned off completely on 2nd click).* |
-| **TC-02** | Physical Controls | Verify analog continuous brightness dimming across 1% to 100% range | Lamp is powered ON at moderate brightness level (~50%) | 1. Slowly rotate rotary knob clockwise to maximum limit.<br>2. Observe luminous flux and transition smoothness.<br>3. Rotate rotary knob counter-clockwise to minimum limit. | Brightness increases smoothly without visible stepping or strobe flicker to 100% lumen, and dims down to 1% low-light threshold smoothly. | **PASS**<br>*(Executed: Smooth stepless dimming observed across full dial rotation; zero stepping artifacts).* |
-| **TC-03** | Physical Controls | Verify Correlated Color Temperature (CCT) adjustment (2700K - 6500K) | Lamp is powered ON at standard reading level | 1. Press down and hold rotary knob continuously.<br>2. While holding down, rotate knob clockwise.<br>3. Observe LED color hue.<br>4. Still holding down, rotate knob counter-clockwise. | Clockwise rotation dynamically blends warm/cool LEDs toward 6500K (crisp cool white); counter-clockwise rotation blends toward 2700K (warm yellow). | **PASS**<br>*(Executed: Dual CCT channels blended seamlessly; pressing while turning smoothly shifted color hue).* |
-| **TC-04** | Physical Controls | Verify Focus Mode (Pomodoro Timer) trigger via rotary knob double-click | Lamp is powered ON in normal operating mode | 1. Rapidly double-click the rotary knob within 400ms.<br>2. Observe optical feedback from LED strip. | Lamp executes a gentle breathing/pulsing optical animation once to signal activation of the preset 45-minute Pomodoro focus period. | **PASS**<br>*(Executed: Double-click recognized immediately; lamp pulsed once gently to confirm focus mode engagement).* |
-| **TC-05** | Mechanical | Verify folding hinge articulation range (0° to 135°) and cable strain relief | Lamp placed on level desk; powered ON at 50% brightness | 1. Carefully lift lamp arm from 0° (folded) upward to 135° mechanical stop limit.<br>2. Inspect external red connecting cable at pivot joint.<br>3. Release arm at 45°, 90°, and 120°. | Arm moves smoothly across 0°-135° without binding; hinge holds chosen angles against gravity without drooping; external cable does not pinch or stretch. | **PASS**<br>*(Executed: Hinge provides firm, consistent resistance; cable maintains ample slack without crimping; zero flickering).* |
-| **TC-06** | Mechanical | Verify weighted circular base stability under maximum cantilever extension | Lamp placed on smooth, horizontal tabletop | 1. Extend lamp arm horizontally to 90° cantilever angle.<br>2. Tap lightly on the horizontal lamp head from above.<br>3. Measure if circular base lifts off table surface. | Weighted circular base remains completely flush on tabletop; rubber anti-slip feet prevent sliding or tipping under normal adjustment loads. | **NOT RUN**<br>*(Design baseline verified: base contains cast iron ballast maintaining center of gravity directly over footprint).* |
-| **TC-07** | Electrical | Verify non-volatile state retention following DC mains power interruption | Lamp powered ON; configured to 30% brightness and 3000K warm CCT | 1. Disconnect 12V DC barrel connector from rear base.<br>2. Wait 10 seconds for decoupling capacitors to discharge.<br>3. Reconnect 12V DC barrel connector.<br>4. Press knob to turn ON. | Onboard EEPROM/Flash memory recalls exact previous brightness (30%) and CCT (3000K) settings without reverting to factory defaults. | **NOT RUN**<br>*(Documented for test plan; state retention ensures user does not need to re-pair app after power cuts).* |
-| **TC-08** | Electrical | Verify low-voltage brownout threshold and clean microcontroller shutdown | Lamp connected to variable bench DC power supply set to 12.0V DC | 1. Gradually decrease supply voltage from 12.0V to 8.0V DC at 0.5V/sec.<br>2. Observe LED driver output and microcontroller status. | Internal buck-boost driver maintains regulated current until minimum operating threshold (~9.0V); below threshold, MCU cuts power cleanly without flickering. | **NOT RUN**<br>*(Requires bench power supply; prevents high-frequency acoustic noise and unstable LED flashing during grid brownouts).* |
-| **TC-09** | Connectivity | Verify hardware factory reset procedure via recessed pinhole button | Lamp connected to DC power; paired to a test Wi-Fi network | 1. Locate reset pinhole on underside of base.<br>2. Insert SIM ejector tool; press and hold button for 5 seconds.<br>3. Observe optical feedback from lamp. | Lamp flashes/pulses light for 5 seconds and reboots into Wi-Fi AP provisioning mode; network credentials cleared from flash memory. | **NOT RUN**<br>*(Preserved to maintain existing user Wi-Fi network configuration during test session).* |
-| **TC-10** | Connectivity | Verify 2.4 GHz Wi-Fi pairing and Xiaomi Home App remote control synchronization | Xiaomi Home App installed on smartphone; 2.4 GHz 802.11b/g/n Wi-Fi active | 1. Open app, initiate pairing via BLE beacon/Wi-Fi.<br>2. Adjust brightness and CCT sliders in mobile app UI.<br>3. Observe physical lamp response latency. | Lamp responds to app commands within <500ms; physical dial and software slider remain bidirectional in synchronization. | **NOT RUN**<br>*(Full IoT cloud integration test case).* |
-| **TC-11** | Connectivity | Verify local offline standalone operation when Wi-Fi connection is lost | Lamp paired and functioning under active Wi-Fi router connection | 1. Disconnect Wi-Fi router WAN/LAN link.<br>2. Operate physical rotary knob (click, rotate, press-rotate).<br>3. Check for UI freeze, latency, or reboot. | Local physical controls operate with 0ms latency; lamp does not hang, reboot, or block inputs while searching for Wi-Fi reconnection. | **NOT RUN**<br>*(Confirms firmware separates network telemetry thread from physical RTOS control loop).* |
-| **TC-12** | **CLO G9.3 Edge Case 1** | **Rapid DC power chatter / contact bounce resilience** | Lamp connected to 12V DC power adapter; lamp turned ON | 1. Rapidly unplug and partially re-seat the 12V DC barrel connector 5 times in <200ms intervals (simulating loose wall socket).<br>2. Fully seat connector and observe recovery. | MCU Brownout Detection (BOD) prevents firmware crash or latch-up; no high-frequency inductive flyback damages driver; lamp recovers cleanly to stable standby/ON. | **NOT RUN**<br>*(Physical hardware electrical fault condition missed by AI LLMs, which assume binary clean power states).* |
-| **TC-13** | **CLO G9.3 Edge Case 2** | **Rotary encoder boundary overflow & simultaneous depress race condition** | Lamp turned ON at maximum 6500K cool white setting | 1. Firmly depress rotary knob.<br>2. While held down, vigorously rotate clockwise past the 6500K mechanical boundary >10 full revolutions.<br>3. Abruptly release knob and immediately single-click. | Firmware encoder interrupt handler clamps integer bounds at 6500K without buffer overflow or integer wrapping to 2700K; single-click executes clean power toggle. | **NOT RUN**<br>*(Quadrature encoder firmware debounce and boundary overflow edge case overlooked by generic AI test generators).* |
-| **TC-14** | **CLO G9.3 Edge Case 3** | **Sustained maximum lumen thermal dissipation & hinge cantilever friction retention** | Ambient temperature 25°C; lamp placed on level desk | 1. Set arm to 90° horizontal cantilever position.<br>2. Set brightness to 100% (maximum thermal output of ~6W LED array).<br>3. Run continuously for 60 minutes.<br>4. Measure arm vertical height deflection and hinge joint temperature. | Aluminum heatsink dissipates heat effectively (housing remains <50°C); thermal expansion of hinge friction washers does not cause cantilever arm to sag downward (>2mm). | **NOT RUN**<br>*(Thermodynamic heat dissipation and mechanical friction degradation edge case absent from AI software-oriented prompts).* |
-| **TC-15** | **CLO G9.3 Edge Case 4** | **Optical stroboscopic flicker & PWM ripple compliance (IEEE 1789-2015)** | Darkened test room; high-frame-rate camera set to 240 fps slow-motion capture | 1. Set lamp brightness to 1%, 10%, 50%, and 100%.<br>2. Record LED optical emission using 240 fps camera from 30cm distance.<br>3. Analyze video playback for visible rolling black bars or stroboscopic ripple. | Patented RC filter and constant-current PWM driver eliminate visible and non-perceptible stroboscopic flicker across all dimming levels per IEEE 1789-2015 standard. | **NOT RUN**<br>*(Optical biological safety edge case missed by AI models that lack hardware domain awareness).* |
+| **TC-01** | Physical Controls | Turn lamp ON and OFF using the knob | Lamp plugged into 12V power; currently OFF | 1. Click the knob once.<br>2. Wait 2 seconds.<br>3. Click the knob again. | Lamp turns ON instantly on first click at previous brightness. Second click turns it completely OFF. | **PASS**<br>*(Executed: Lamp responded instantly with zero lag).* |
+| **TC-02** | Physical Controls | Smoothly adjust brightness from 1% to 100% | Lamp is ON at medium brightness | 1. Turn knob clockwise to max.<br>2. Turn knob counter-clockwise to min. | Light gets smoothly brighter up to 100%, then dims smoothly down to 1% without jumping or flickering. | **PASS**<br>*(Executed: Stepless dimming worked smoothly in both directions).* |
+| **TC-03** | Physical Controls | Adjust light color (Warm Yellow to Cool White) | Lamp is ON | 1. Press and hold knob down.<br>2. Rotate clockwise.<br>3. Rotate counter-clockwise.<br>4. Release knob. | Rotating clockwise shifts light to crisp cool white (6500K). Rotating counter-clockwise shifts light to cozy warm yellow (2700K). | **PASS**<br>*(Executed: Color temperature blended smoothly while holding knob).* |
+| **TC-04** | Physical Controls | Activate Focus Mode (Pomodoro Timer) | Lamp is ON | Double-click the knob quickly (within 0.5s). | Lamp gently breathes/pulses once to confirm Focus Mode is active. | **PASS**<br>*(Executed: Lamp pulsed once right after double click).* |
+| **TC-05** | Mechanical | Check folding arm range (0° to 135°) and cable safety | Lamp on flat desk; light is ON | 1. Lift arm from 0° (flat) to 135° (max tilt).<br>2. Check red cable.<br>3. Let go of arm at 45° and 90°. | Arm moves smoothly; stays firmly in place at any angle without drooping; red wire does not pinch or stretch. | **PASS**<br>*(Executed: Hinge is tight and firm; red wire has plenty of slack).* |
+| **TC-06** | Mechanical | Check desk stability with arm fully stretched out | Lamp on flat desk | 1. Stretch arm out horizontally (90°).<br>2. Gently tap top of lamp. | Heavy circular base stays flat on desk; rubber feet prevent sliding or tipping over. | **NOT RUN**<br>*(Base has heavy built-in metal weight).* |
+| **TC-07** | Power Memory | Check if lamp remembers brightness after unplugging | Lamp ON at 30% warm light | 1. Unplug power cord from lamp base.<br>2. Wait 10 seconds.<br>3. Plug cord back in and click knob. | Lamp turns back on with the exact same 30% warm light without resetting to default. | **NOT RUN**<br>*(Memory chip saves settings).* |
+| **TC-08** | Power Protection | Check behavior during low voltage / brownout | Variable power supply set to 12V | Slowly lower voltage from 12V down to 8V. | Lamp stays lit until about 9V, then shuts down cleanly without strobing or buzzing. | **NOT RUN**<br>*(Requires lab power supply).* |
+| **TC-09** | System Reset | Factory reset lamp using pinhole button | Lamp plugged in and powered | Insert a SIM pin into bottom reset hole and hold for 5 seconds. | Lamp flashes for 5 seconds and resets to factory setup mode. | **NOT RUN**<br>*(Preserved current home setup).* |
+| **TC-10** | Smart Features | Pair with Mi Home app and control remotely | Phone with Mi Home app; 2.4GHz Wi-Fi on | 1. Pair lamp in app.<br>2. Move brightness slider on phone screen. | Lamp updates brightness in under 0.5 seconds to match phone slider. | **NOT RUN**<br>*(Standard smart app test).* |
+| **TC-11** | Offline Mode | Use knob when Wi-Fi is disconnected | Lamp turned ON; Wi-Fi router turned OFF | Turn and click knob while Wi-Fi is disconnected. | Knob responds instantly; lamp does not lag, freeze, or reboot while looking for Wi-Fi. | **NOT RUN**<br>*(Physical controls work independently of internet).* |
+| **TC-12** | **Edge Case 1 (Missed by AI)** | **Loose power plug / contact bounce (<200ms)** | Lamp plugged in and turned ON | Rapidly wiggle and re-seat power plug 5 times in under 1 second. | Lamp restarts cleanly without freezing, driver latch-up, or memory corruption. | **NOT RUN**<br>*(Real-world electrical loose contact test).* |
+| **TC-13** | **Edge Case 2 (Missed by AI)** | **Pressing down while violently spinning knob past limit** | Lamp turned ON at max cool white | Press knob down hard and spin clockwise past the stop over 10 times quickly. | Software keeps color clamped at max cool white without wrapping around to yellow or freezing. | **NOT RUN**<br>*(Encoder spam / boundary overflow test).* |
+| **TC-14** | **Edge Case 3 (Missed by AI)** | **1 Hour at 100% brightness (Heat & arm sag test)** | Lamp in 25°C room, arm at 90° horizontal | 1. Set to 100% brightness for 60 minutes.<br>2. Measure if arm height drops or hinge gets too hot. | Metal arm stays within safe temperature (<50°C); hinge friction does not weaken or let arm sag. | **NOT RUN**<br>*(Thermodynamic and gravity stress test).* |
+| **TC-15** | **Edge Case 4 (Missed by AI)** | **Optical light flicker check at 240fps slow-motion** | Dark room; phone camera set to 240fps slow-mo | Record video of light at 1%, 50%, and 100% from 30cm away. | Video shows solid, steady light with zero rolling black lines (meets IEEE 1789 eye safety standard). | **NOT RUN**<br>*(Ocular health and PWM ripple test).* |
 
 ---
 
-### 3.4 Physical Execution Evidence & Video Manifest
+### 3.4 Physical Execution Evidence & Video Links
 
-To satisfy the mandatory requirement for physical test execution and video evidence, **5 core test cases** were executed directly on the physical Xiaomi desk lamp. Each execution is recorded as a dedicated short video ($\le 60$ seconds) featuring **authentic student voice narration** describing the test setup, action, observed behavior, and verdict.
+I physically performed **5 core tests** on my desk lamp and recorded short demonstration videos ($\le 60$ seconds each) with my **own voice narration in Vietnamese**, explaining what was being tested and the observed result.
 
-| Test ID | Executed Test Description | Video Duration | Voice Narration Language | Observed Execution Outcome | Verdict | YouTube Unlisted Link |
+| Test ID | What Was Tested | Video Length | Voice Narration | Observed Result | Verdict | YouTube Unlisted Link |
 |:---:|---|:---:|:---:|---|:---:|---|
-| **TC-01** | Physical Power Toggle (Standby $\leftrightarrow$ ON) | ~15s | Vietnamese | Clicking rotary knob turns lamp on instantly (<100ms) at previous memory setting; second click powers off completely. | **PASS** | [YouTube Video 1 — Unlisted Link](https://youtu.be/placeholder1) |
-| **TC-02** | Continuous Stepless Brightness Dimming (1% - 100%) | ~22s | Vietnamese | Rotating dial clockwise increases luminous flux continuously to max; counter-clockwise rotation smoothly dims down to 1% low light without stepping artifacts. | **PASS** | [YouTube Video 2 — Unlisted Link](https://youtu.be/placeholder2) |
-| **TC-03** | Dynamic Color Temperature Adjustment (2700K - 6500K) | ~25s | Vietnamese | Pressing down knob while rotating clockwise smoothly transitions light to 6500K cool white; rotating counter-clockwise smoothly transitions to 2700K warm yellow. | **PASS** | [YouTube Video 3 — Unlisted Link](https://youtu.be/placeholder3) |
-| **TC-04** | Focus Mode (Pomodoro Timer) Activation | ~18s | Vietnamese | Double-clicking dial knob triggers a gentle breathing/pulsing animation across the LED strip, confirming Pomodoro 45-minute focus mode activation. | **PASS** | [YouTube Video 4 — Unlisted Link](https://youtu.be/placeholder4) |
-| **TC-05** | Folding Hinge Articulation Range & Cable Strain Relief | ~28s | Vietnamese | Arm articulates smoothly from 0° to 135° mechanical stop limit; hinge holds position firmly at multiple angles without sagging; red cable maintains slack without crimping. | **PASS** | [YouTube Video 5 — Unlisted Link](https://youtu.be/placeholder5) |
+| **TC-01** | Power ON and OFF toggle with knob | ~15s | Vietnamese | Clicking knob turns lamp on instantly; second click turns it off cleanly. | **PASS** | [YouTube Video 1 — Unlisted Link](https://youtu.be/placeholder1) |
+| **TC-02** | Brightness dimming from 1% to 100% | ~22s | Vietnamese | Turning dial clockwise increases light to max; counter-clockwise dims smoothly down to 1%. | **PASS** | [YouTube Video 2 — Unlisted Link](https://youtu.be/placeholder2) |
+| **TC-03** | Color temperature (Yellow to White) | ~25s | Vietnamese | Holding knob down while turning smoothly shifts light from cozy yellow to daylight white. | **PASS** | [YouTube Video 3 — Unlisted Link](https://youtu.be/placeholder3) |
+| **TC-04** | Focus Mode (Pomodoro Timer) double-click | ~18s | Vietnamese | Double-clicking knob makes the light gently breathe once to confirm focus timer is started. | **PASS** | [YouTube Video 4 — Unlisted Link](https://youtu.be/placeholder4) |
+| **TC-05** | Folding arm movement and cable check | ~28s | Vietnamese | Arm tilts smoothly from 0° to 135° and stays in place firmly; red cable has plenty of slack. | **PASS** | [YouTube Video 5 — Unlisted Link](https://youtu.be/placeholder5) |
 
-*(Note: Videos are uploaded as YouTube Unlisted per course guidelines. Student will insert the exact YouTube URLs once upload processing completes).*
+*(Note: Videos are uploaded as YouTube Unlisted per course instructions. I will insert the exact YouTube links once the videos finish uploading).*
 
 ## 4. AI Audit Report
 

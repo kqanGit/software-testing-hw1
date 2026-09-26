@@ -46,7 +46,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 35 | 16:53 25/09/2026 | Antigravity (Gemini 3.8 Flash) | change case 17 to this [Owler Reports - Toyota: Disk space shortage shuttered Toyota assembly plants](https://www.owler.com/reports/toyota-motor-corporation/toyota-plants-shut-down-after-database-maintenance/1694036521434) | User provides verified live report URL for Defect #17 (Toyota disk space shortage outage) |
 | 36 | 22:46 25/09/2026 | Antigravity (Gemini 3.8 Flash) | Okay let's start requirement 3, list the work I have to do | Outline detailed step-by-step action plan, anti-cheat rules, and deliverables for Requirement 3 (Test a Physical Product) |
 | 37 | 15:04 26/09/2026 | Antigravity (Gemini 3.8 Flash) | I choose my lamp, it's a Xiaomi Mi Smart LED Desk Lamp, here is the picture of that lamp with my ID card, and the model number, pls fill to my document | Provide physical device details (Xiaomi Mi Smart LED Desk Lamp, MJTD01YL, SN: 16058/****5797) and anti-cheat photo with student ID card (23120337) |
-| 38 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 38 | 15:18 26/09/2026 | Antigravity (Gemini 3.8 Flash) | hey just fix the language easier to read in the requirement 3 part in the main_report | Simplify phrasing and improve readability of Section 3 in Main_Report.md while maintaining technical accuracy |
+| 39 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
