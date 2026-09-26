@@ -116,10 +116,11 @@ INCOMPLETE (Lacks physical, electrical transient, thermodynamic, and optical bio
 **(4) Reasoning**  
 Evaluation against **ISTQB CTFL v4.0.1 Section 4.2 (Black-Box Test Techniques — Equivalence Partitioning & Boundary Value Analysis)** and Bloom-AI Level **G9.3 (Analyze)** demonstrates that commercial LLMs suffer from an "App-Centric Software Bias":
 - The AI treats the physical smart lamp as if it were a purely virtual software application or Web API.
-- The AI completely omits real-world physical embodiment constraints: contact bounce on the DC barrel jack (<200ms power interruption), physical rotary encoder interrupt race conditions (simultaneous depress and high-speed spin past mechanical limits), thermodynamic heat dissipation causing hinge cantilever friction sagging over time, and optical PWM stroboscopic ripple under IEEE 1789-2015 standards.
+- The AI completely omits real-world physical embodiment constraints: contact bounce on the DC barrel jack (<200ms power interruption), physical rotary encoder interrupt race conditions (simultaneous depress and high-speed spin past mechanical limits), thermodynamic heat dissipation causing hinge cantilever friction sagging over time, optical PWM stroboscopic ripple under IEEE 1789-2015 standards, and liquid spill / moisture ingress risks on an IP20-rated household device.
 
 **(5) Student fix**  
-The student rejected 4 redundant app/cloud test cases and engineered **4 critical physical hardware edge cases** (documented as TC-12 through TC-15 in Section 3.3 of `Main_Report.md`):
+The student rejected 5 redundant app/cloud test cases and engineered **5 critical physical hardware edge cases** (documented as TC-08 and TC-12 through TC-15 in Section 3.3 of `Main_Report.md`):
+- **TC-08 (Edge Case 5):** Can the lamp be waterproof? Accidental liquid spill / water splash on base and rotary dial to verify IP20 rating boundaries, ingress prevention, and 12V adapter short-circuit protection shutdown.
 - **TC-12 (Edge Case 1):** Rapid DC barrel plug contact chatter (<200ms power bounce) to test microcontroller Brownout Detection (BOD) and driver latch-up prevention.
 - **TC-13 (Edge Case 2):** Rotary encoder boundary overflow and simultaneous depress race condition to validate quadrature decoding ISR clamping.
 - **TC-14 (Edge Case 3):** Sustained 100% lumen thermal dissipation and hinge cantilever friction retention under continuous 60-minute heat load.

@@ -463,7 +463,7 @@ When I asked AI models (ChatGPT, Claude, Gemini) to generate test cases for a sm
 #### Why Does AI Miss Physical Hardware Bugs?
 AI models think like software developers testing a mobile screen or a web API. They don't have a physical body, so they forget that a real household lamp deals with real-world physics: loose electrical plugs, heat buildup, physical hinges getting loose over time, and eye-straining light flicker.
 
-To fulfill the **CLO G9.3 (Analyze)** requirement, I identified **4 critical physical edge cases** that the AI completely overlooked:
+To fulfill the **CLO G9.3 (Analyze)** requirement, I identified **5 critical physical edge cases** that the AI completely overlooked:
 
 | # | Missed Physical Edge Case | What AI Overlooks | Why This Test Matters in Real Life |
 |:---:|---|---|---|
@@ -471,12 +471,13 @@ To fulfill the **CLO G9.3 (Analyze)** requirement, I identified **4 critical phy
 | **2** | **Pushing Down and Vigorously Spinning the Knob Past the Limit** | AI assumes users turn knobs gently. It doesn't test violent, rapid inputs or pressing while spinning past the maximum stop. | Rapid spinning can confuse the knob's internal sensor. If the code isn't guarded, the color temperature could glitch, wrap from cool white back to yellow, or lock up the controls. |
 | **3** | **1 Hour at 100% Brightness (Heat & Arm Sagging Test)** | AI doesn't understand thermodynamics or gravity. It assumes the lamp arm stays in place forever. | LEDs get warm. If the lamp runs at full power for 60 minutes, the heat can warm up the metal hinge and soften its friction pads, causing the heavy arm to slowly droop down. |
 | **4** | **Invisible Light Flicker (Slow-Motion 240fps Camera Test)** | AI assumes that if light shines, quality is fine. It cannot "see" high-speed optical flicker. | Cheap or poorly regulated LED lights flicker hundreds of times per second. Even if invisible to the eye, this causes eye strain and headaches. A slow-motion camera check verifies steady, eye-safe light (IEEE 1789 standard). |
+| **5** | **Can the Lamp Be Waterproof? (Accidental Desk Liquid Spill & IP20 Safety)** | AI never asks if household electronics can handle water. It assumes the lamp is operated in a sterile, dry virtual environment. | Desk lamps sit right next to drinking glasses and coffee mugs. The Xiaomi lamp has an **IP20 rating** (dry indoor use only — **not waterproof**). If water spills near the base or knob, does it seep into the internal PCB, and does the 12V adapter safely shut down without causing a short circuit, smoke, or electric shock? |
 
 ---
 
 ### 3.3 Complete 15 Test Cases Suite
 
-Here is the complete set of **15 test cases** designed for the lamp, covering physical knob controls, moving parts, power resilience, app connectivity, and the 4 physical edge cases.
+Here is the complete set of **15 test cases** designed for the lamp, covering physical knob controls, moving parts, power resilience, app connectivity, and the 5 physical edge cases.
 
 *(The companion Excel sheet `Physical_Product_Test_Cases.xlsx` contains this exact test suite).*
 
@@ -489,7 +490,7 @@ Here is the complete set of **15 test cases** designed for the lamp, covering ph
 | **TC-05** | Mechanical | Check folding arm range (0° to 135°) and cable safety | Lamp on flat desk; light is ON | 1. Lift arm from 0° (flat) to 135° (max tilt).<br>2. Check red cable.<br>3. Let go of arm at 45° and 90°. | Arm moves smoothly; stays firmly in place at any angle without drooping; red wire does not pinch or stretch. | **PASS**<br>*(Executed: Hinge is tight and firm; red wire has plenty of slack).* |
 | **TC-06** | Mechanical | Check desk stability with arm fully stretched out | Lamp on flat desk | 1. Stretch arm out horizontally (90°).<br>2. Gently tap top of lamp. | Heavy circular base stays flat on desk; rubber feet prevent sliding or tipping over. | **NOT RUN**<br>*(Base has heavy built-in metal weight).* |
 | **TC-07** | Power Memory | Check if lamp remembers brightness after unplugging | Lamp ON at 30% warm light | 1. Unplug power cord from lamp base.<br>2. Wait 10 seconds.<br>3. Plug cord back in and click knob. | Lamp turns back on with the exact same 30% warm light without resetting to default. | **NOT RUN**<br>*(Memory chip saves settings).* |
-| **TC-08** | Power Protection | Check behavior during low voltage / brownout | Variable power supply set to 12V | Slowly lower voltage from 12V down to 8V. | Lamp stays lit until about 9V, then shuts down cleanly without strobing or buzzing. | **NOT RUN**<br>*(Requires lab power supply).* |
+| **TC-08** | **Edge Case 5 (Missed by AI)** | **Can the lamp be waterproof? (Desk spill & IP20 safety check)** | Lamp plugged in and turned ON; dry towels ready | 1. Spill ~10ml of water on desk near base and dial knob.<br>2. Check if water seeps into dial seam or DC jack.<br>3. Observe electrical safety response. | The lamp is **rated IP20 (not waterproof)**. Water must not bridge 220V mains (isolated by 12V DC adapter). If moisture reaches the 12V board, short-circuit protection safely cuts power without fire, smoke, or electric shock. | **NOT RUN**<br>*(Physical boundary test: verifies user safety limits and confirms IP20 dry indoor rating).* |
 | **TC-09** | System Reset | Factory reset lamp using pinhole button | Lamp plugged in and powered | Insert a SIM pin into bottom reset hole and hold for 5 seconds. | Lamp flashes for 5 seconds and resets to factory setup mode. | **NOT RUN**<br>*(Preserved current home setup).* |
 | **TC-10** | Smart Features | Pair with Mi Home app and control remotely | Phone with Mi Home app; 2.4GHz Wi-Fi on | 1. Pair lamp in app.<br>2. Move brightness slider on phone screen. | Lamp updates brightness in under 0.5 seconds to match phone slider. | **NOT RUN**<br>*(Standard smart app test).* |
 | **TC-11** | Offline Mode | Use knob when Wi-Fi is disconnected | Lamp turned ON; Wi-Fi router turned OFF | Turn and click knob while Wi-Fi is disconnected. | Knob responds instantly; lamp does not lag, freeze, or reboot while looking for Wi-Fi. | **NOT RUN**<br>*(Physical controls work independently of internet).* |
