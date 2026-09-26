@@ -10,7 +10,7 @@
 |---|---|
 | Student name (printed) | Bùi Minh Quân |
 | Student ID | 23120337 |
-| Class / Cohort | Computer Science / IT (23CLC) |
+| Class | KCPM-CQ2023/3 |
 | Assignment ID | HW01-AI |
 | Assignment date | 26/09/2026 |
 | AI tool(s) used | Antigravity (Gemini 3.8 Flash), Codex (GPT-6) |
@@ -164,7 +164,7 @@ Across the three audited artifacts, AI demonstrated notable capability for scaff
 
 **Student name:** Bùi Minh Quân  
 **Student ID:** 23120337  
-**Class / Cohort:** Computer Science / IT (23CLC)  
+**Class:** KCPM-CQ2023/3  
 **Course:** CS423 / CSC15003 — Software Testing  
 **Instructor:** Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh  
 **Date:** 26/09/2026  

@@ -14,6 +14,7 @@ Attach this form to the assignment when AI was used in a permitted capacity.
 | Date | 26/09/2026 |
 | Student name | Bùi Minh Quân |
 | Student ID | 23120337 |
+| Class | KCPM-CQ2023/3 |
 
 ## 2. Disclosure Questions
 
@@ -70,7 +71,7 @@ By signing below, I confirm that this disclosure is accurate and complete. I und
 
 **Student name (printed):** Bùi Minh Quân  
 **Student ID:** 23120337  
-**Class / Cohort:** Computer Science / IT (23CLC)  
+**Class:** KCPM-CQ2023/3  
 **Course:** CS423 / CSC15003 — Software Testing  
 **Instructor:** Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh  
 **Date:** 26/09/2026  

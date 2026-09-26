@@ -560,7 +560,7 @@ This experience shows that we cannot trust AI blindly. We must use AI more stric
 
 **Student Name:** Bùi Minh Quân  
 **Student ID:** 23120337  
-**Class / Cohort:** Computer Science / IT (23CLC)  
+**Class:** KCPM-CQ2023/3  
 **Date:** 26/09/2026  
 **Digital Signature / Hash:** `bmquan.gd@gmail.com / 23120337`
 

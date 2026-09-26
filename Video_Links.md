@@ -3,7 +3,7 @@
 **Course:** CS423 / CSC15003 — Software Testing (AI-augmented, 2026)  
 **Student Name:** Bùi Minh Quân  
 **Student ID:** 23120337  
-**Class / Cohort:** Computer Science / IT (23CLC)  
+**Class:** KCPM-CQ2023/3  
 **Target Device:** Xiaomi Mi Smart LED Desk Lamp (Model: `MJTD01YL`, SN: `16058/****5797`)  
 
 ---

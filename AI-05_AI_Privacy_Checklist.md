@@ -33,7 +33,7 @@ Final responsibility for the accuracy, originality, and integrity of this submis
 
 **Student name (printed):** Bùi Minh Quân  
 **Student ID:** 23120337  
-**Class / Cohort:** Computer Science / IT (23CLC)  
+**Class:** KCPM-CQ2023/3  
 **Course:** CS423 / CSC15003 — Software Testing  
 **Instructor:** Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh  
 **Date:** 26/09/2026  
