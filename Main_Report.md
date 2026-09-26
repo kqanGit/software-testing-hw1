@@ -507,7 +507,7 @@ I physically performed **5 core tests** on my desk lamp and recorded short demon
 
 | Test ID | What Was Tested | Video Length | Voice Narration | Observed Result | Verdict | YouTube Unlisted Link |
 |:---:|---|:---:|:---:|---|:---:|---|
-| **TC-01** | Power ON and OFF toggle with knob | ~15s | Vietnamese | Clicking knob turns lamp on instantly; second click turns it off cleanly. | **PASS** | [YouTube Video 1 — Unlisted Link](https://youtu.be/placeholder1) |
+| **TC-01** | Power ON and OFF toggle with knob | ~15s | Vietnamese | Clicking knob turns lamp on instantly; second click turns it off cleanly. | **PASS** | [YouTube Video 1 (TC-01)](https://youtube.com/shorts/kxVhKojTIY0?feature=share) |
 | **TC-02** | Brightness dimming from 1% to 100% | ~22s | Vietnamese | Turning dial clockwise increases light to max; counter-clockwise dims smoothly down to 1%. | **PASS** | [YouTube Video 2 — Unlisted Link](https://youtu.be/placeholder2) |
 | **TC-03** | Color temperature (Yellow to White) | ~25s | Vietnamese | Holding knob down while turning smoothly shifts light from cozy yellow to daylight white. | **PASS** | [YouTube Video 3 — Unlisted Link](https://youtu.be/placeholder3) |
 | **TC-04** | Focus Mode (Pomodoro Timer) double-click | ~18s | Vietnamese | Double-clicking knob makes the light gently breathe once to confirm focus timer is started. | **PASS** | [YouTube Video 4 — Unlisted Link](https://youtu.be/placeholder4) |
