@@ -509,11 +509,11 @@ I physically performed **5 core tests** on my desk lamp and recorded short demon
 |:---:|---|:---:|:---:|---|:---:|---|
 | **TC-01** | Power ON and OFF toggle with knob | ~15s | Vietnamese | Clicking knob turns lamp on instantly; second click turns it off cleanly. | **PASS** | [YouTube Video 1 (TC-01)](https://youtube.com/shorts/kxVhKojTIY0?feature=share) |
 | **TC-02** | Brightness dimming from 1% to 100% | ~22s | Vietnamese | Turning dial clockwise increases light to max; counter-clockwise dims smoothly down to 1%. | **PASS** | [YouTube Video 2 (TC-02)](https://youtube.com/shorts/AgMTM73M7u0) |
-| **TC-03** | Color temperature (Yellow to White) | ~25s | Vietnamese | Holding knob down while turning smoothly shifts light from cozy yellow to daylight white. | **PASS** | [YouTube Video 3 — Unlisted Link](https://youtu.be/placeholder3) |
-| **TC-04** | Focus Mode (Pomodoro Timer) double-click | ~18s | Vietnamese | Double-clicking knob makes the light gently breathe once to confirm focus timer is started. | **PASS** | [YouTube Video 4 — Unlisted Link](https://youtu.be/placeholder4) |
-| **TC-05** | Folding arm movement and cable check | ~28s | Vietnamese | Arm tilts smoothly from 0° to 135° and stays in place firmly; red cable has plenty of slack. | **PASS** | [YouTube Video 5 — Unlisted Link](https://youtu.be/placeholder5) |
+| **TC-03** | Color temperature (Yellow to White) | ~25s | Vietnamese | Holding knob down while turning smoothly shifts light from cozy yellow to daylight white. | **PASS** | [YouTube Video 3 (TC-03)](https://youtube.com/shorts/lZS0NlpGA7M) |
+| **TC-04** | Focus Mode (Pomodoro Timer) double-click | ~18s | Vietnamese | Double-clicking knob makes the light gently breathe once to confirm focus timer is started. | **PASS** | [YouTube Video 4 (TC-04)](https://youtube.com/shorts/3sCEWmT5xKo) |
+| **TC-05** | Folding arm movement and cable check | ~28s | Vietnamese | Arm tilts smoothly from 0° to 135° and stays in place firmly; red cable has plenty of slack. | **PASS** | [YouTube Video 5 (TC-05)](https://youtube.com/shorts/IdhjkajpM1k) |
 
-*(Note: Videos are uploaded as YouTube Unlisted per course instructions. I will insert the exact YouTube links once the videos finish uploading).*
+*(Note: All 5 execution demo videos are uploaded as YouTube Unlisted with authentic student voice narration in Vietnamese per course anti-cheat regulations).*
 
 ## 4. AI Audit Report
 

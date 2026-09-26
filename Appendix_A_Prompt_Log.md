@@ -50,7 +50,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 39 | 15:23 26/09/2026 | Antigravity (Gemini 3.8 Flash) | add an edge case that can the lamp be waterproof? | Add accidental liquid spill / water splash edge case (IP20 rating & electrical safety) to Requirement 3 |
 | 40 | 15:49 26/09/2026 | Antigravity (Gemini 3.8 Flash) | https://youtube.com/shorts/kxVhKojTIY0?feature=share update this link for test case 01 | Provide YouTube video evidence URL for Test Case 01 (Physical Power Toggle) |
 | 41 | 15:55 26/09/2026 | Antigravity (Gemini 3.8 Flash) | https://youtube.com/shorts/AgMTM73M7u0 update this for TC02 | Provide YouTube video evidence URL for Test Case 02 (Brightness Dimming) |
-| 42 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 42 | 15:56 26/09/2026 | Antigravity (Gemini 3.8 Flash) | https://youtube.com/shorts/lZS0NlpGA7M - TC03 <br> https://youtube.com/shorts/3sCEWmT5xKo - TC04 <br> https://youtube.com/shorts/IdhjkajpM1k - TC05 | Provide YouTube video evidence URLs for Test Cases 03, 04, and 05 (Color Temperature, Focus Mode, Hinge Movement) |
+| 43 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
