@@ -126,96 +126,53 @@ The student rejected 5 redundant app/cloud test cases and engineered **5 critica
 - **TC-14 (Edge Case 3):** Sustained 100% lumen thermal dissipation and hinge cantilever friction retention under continuous 60-minute heat load.
 - **TC-15 (Edge Case 4):** Optical stroboscopic flicker and PWM ripple compliance using 240fps slow-motion capture per IEEE 1789-2015 ocular health guidelines.
 
-### Artifact 4 — [Artifact name]
+### Summary of Audited Artifacts
 
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
-
-### Artifact 5 — [Artifact name]
-
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
-
-### Artifact 6 — [Artifact name]
-
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
-
-### Artifact 7 — [Artifact name]
-
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
-
-### Artifact 8 — [Artifact name]
-
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
-
-### Artifact 9 — [Artifact name]
-
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
-
-### Artifact 10 — [Artifact name]
-
-**(1) Prompt + tool:** [Tool, actual timestamp, and full prompt]  
-**(2) AI output:** [Full verbatim output or labeled screenshot]  
-**(3) Verdict:** [VALID / INVALID / INCOMPLETE]  
-**(4) Reasoning:** [2–5 sentences with course/ISTQB/technical citation]  
-**(5) Student fix:** [Corrected version; highlight changes]
-
-> Add further entries if you used AI to generate more than 10 artifacts.
+The three audited artifacts represent the distinct phases where AI generation was evaluated against formal academic standards, verified factual sources, and physical device reality:
+1. **Artifact 1 (Requirement 1 — ISTQB Mindmap):** Evaluated against ISTQB CTFL v4.0.1 Syllabus. Verdict: **INVALID** (structural & role flaws).
+2. **Artifact 2 (Requirement 2 — Air Canada Defect):** Evaluated against BC Civil Resolution Tribunal (2024 BCCRT 149). Verdict: **INVALID** (factual hallucination).
+3. **Artifact 3 (Requirement 3 — Xiaomi Lamp Test Cases):** Evaluated against physical hardware embodiment & IEEE 1789. Verdict: **INCOMPLETE** (app-centric bias, missing 5 physical edge cases).
 
 ## 4. Summary of AI Accuracy
 
 | Metric | Count | Percentage |
 |---|---:|---:|
-| Total AI-generated artifacts audited | [ ] | 100% |
-| VALID — correct and accepted as-is | [ ] | [ ]% |
-| INVALID — wrong and rejected | [ ] | [ ]% |
-| INCOMPLETE — acceptable after edits | [ ] | [ ]% |
+| **Total AI-generated artifacts audited** | **3** | **100.0%** |
+| **VALID — correct and accepted as-is** | 0 | 0.0% |
+| **INVALID — wrong and rejected** | 2 | 66.7% |
+| **INCOMPLETE — acceptable after edits** | 1 | 33.3% |
 
-**Calculation basis / denominator:** [Explain which artifacts are counted. Percentages should total 100%, allowing rounding.]
+**Calculation basis / denominator:** The denominator consists of the 3 primary AI-generated artifacts produced during the assignment across Requirements 1, 2, and 3. Each artifact was audited against primary external ground truths (ISTQB syllabus, official legal ruling, and physical device operation). Percentages sum to 100.0%.
 
 ## 5. Conclusion — When should AI be used or not?
 
-[Write 80–150 words describing observed patterns, where AI helped, where it failed, and your recommendation for using AI in this kind of work.]
+Across the three audited artifacts, AI demonstrated notable capability for scaffolding initial documents, brainstorming high-level test ideas, and summarizing broad concepts. However, it exhibited severe vulnerability in domain rigor: it hallucinated non-existent legal judgments, misrepresented standardized testing workflows (ISTQB CTFL v4.0.1), and suffered from a software-centric blindspot that overlooked physical, electrical, and thermal failure modes.
+
+**When AI should be used:**
+- Rapidly generating boilerplate test templates and initial exploratory question sets.
+- Drafting initial summaries of unstructured technical articles and defect reports.
+- Brainstorming standard "happy-path" user scenarios for early review.
+
+**When AI should NOT be used:**
+- Authorizing safety-critical or hardware boundary conditions without empirical testing.
+- Citing legal precedents, case outcomes, or financial settlements without primary source verification.
+- Replacing certified QA architecture and formal standard compliance workflows.
 
 ## 6. Mandatory Disclosure
 
-> “[Test cases / script / dataset / report] was initially generated by [AI tool name]; I reviewed and modified [section X], added [edge cases Y, Z]; [section W] was written entirely by me. The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category.”
+> "The QA/QC process mindmap, initial defect candidate descriptions, and baseline smart lamp test cases were initially generated by Antigravity (Gemini 3.8 Flash); I reviewed and modified Section 1.3 (rebuilding the mindmap structure to align with ISTQB CTFL v4.0.1), corrected the legal hallucinations in Defect #1 of Section 2, and added 5 critical hardware edge cases (TC-08 and TC-12 through TC-15) in Section 3; the AI Critique, job posting verifications, physical device execution, and final syntheses were written entirely by me. The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category (device photo with student ID, voice-narrated execution videos, authenticated job screenshots, and prompt log)."
 
-[Replace the bracketed text truthfully and ensure it matches your actual AI use and the assignment's required disclosure placement.]
-
-**Student name:** [Complete]  
-**Student ID:** [Complete]  
-**Class / Cohort:** [Complete]  
+**Student name:** Bùi Minh Quân  
+**Student ID:** 23120337  
+**Class / Cohort:** Computer Science / IT (23CLC)  
 **Course:** CS423 / CSC15003 — Software Testing  
-**Instructor:** [Complete]  
-**Date:** [Complete]  
-**Signature:** [Sign]
+**Instructor:** Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh  
+**Date:** 26/09/2026  
+**Signature:** *Bùi Minh Quân* (Digital Signature / Verification Hash: `bmquan.gd@gmail.com / 23120337`)
 
 ## References
 
-- ISTQB Foundation Level Syllabus (latest version).
+- ISTQB Foundation Level Syllabus v4.0.1 (International Software Testing Qualifications Board, 2023/2024).
 - Hardman, P. (2025). *A Post-AI Learning Taxonomy*.
 - Fuster Rabella, M. (2025). OECD Education Working Paper No. 338.
 - Perkins, M., Roe, J., & Furze, L. (2025). AI Assessment Scale.

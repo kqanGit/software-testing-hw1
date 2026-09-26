@@ -51,7 +51,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 40 | 15:49 26/09/2026 | Antigravity (Gemini 3.8 Flash) | https://youtube.com/shorts/kxVhKojTIY0?feature=share update this link for test case 01 | Provide YouTube video evidence URL for Test Case 01 (Physical Power Toggle) |
 | 41 | 15:55 26/09/2026 | Antigravity (Gemini 3.8 Flash) | https://youtube.com/shorts/AgMTM73M7u0 update this for TC02 | Provide YouTube video evidence URL for Test Case 02 (Brightness Dimming) |
 | 42 | 15:56 26/09/2026 | Antigravity (Gemini 3.8 Flash) | https://youtube.com/shorts/lZS0NlpGA7M - TC03 <br> https://youtube.com/shorts/3sCEWmT5xKo - TC04 <br> https://youtube.com/shorts/IdhjkajpM1k - TC05 | Provide YouTube video evidence URLs for Test Cases 03, 04, and 05 (Color Temperature, Focus Mode, Hinge Movement) |
-| 43 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 43 | 16:13 26/09/2026 | Antigravity (Gemini 3.8 Flash) | AI models often make mistakes, hallucinate, or show bias when we do not give them enough clear instructions.In Requirement 1, when I asked the AI to create a QA/QC role mindmap without giving a clear structure, it got confused between activities and job roles... here is my AI critique, pls fill out to my report | Provide student-authored AI Critique (200–300 words) for Section 5 of Main_Report.md |
+| 44 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
