@@ -54,7 +54,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 43 | 16:13 26/09/2026 | Antigravity (Gemini 3.8 Flash) | AI models often make mistakes, hallucinate, or show bias when we do not give them enough clear instructions.In Requirement 1, when I asked the AI to create a QA/QC role mindmap without giving a clear structure, it got confused between activities and job roles... here is my AI critique, pls fill out to my report | Provide student-authored AI Critique (200–300 words) for Section 5 of Main_Report.md |
 | 44 | 16:33 26/09/2026 | Antigravity (Gemini 3.8 Flash) | why there are 2 excel files here? | Clarify test workbook file naming conventions and course deliverable specification |
 | 45 | 16:34 26/09/2026 | Antigravity (Gemini 3.8 Flash) | Yeah just keep 1 file is enough | Standardize test case Excel deliverable to single workbook: Test_Cases_Checklist_Test_Summary.xlsx |
-| 46 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 46 | 16:45 26/09/2026 | Antigravity (Gemini 3.8 Flash) | add a pdf version of main report | Generate Main_Report.pdf from Main_Report.md for final course submission package |
+| 47 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
