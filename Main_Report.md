@@ -4,7 +4,9 @@
 **Assignment:** HW01-AI  
 **Student:** Bùi Minh Quân  
 **Student ID:** 23120337  
-**Submission date:** 26/09/2026
+**Class:** KCPM-CQ2023/3  
+**Submission date:** 26/09/2026  
+**GitHub Repository:** [https://github.com/kqanGit/software-testing-hw1](https://github.com/kqanGit/software-testing-hw1)
 
 > Complete each section with your own verified research and device-test evidence. Replace all bracketed instructions before submission. Include this Markdown source and its Save-As-PDF copy in the final ZIP.
 

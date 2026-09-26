@@ -57,7 +57,8 @@ Record every AI prompt used for this assignment, including the exact wording and
 | 46 | 16:45 26/09/2026 | Antigravity (Gemini 3.8 Flash) | add a pdf version of main report | Generate Main_Report.pdf from Main_Report.md for final course submission package |
 | 47 | 16:51 26/09/2026 | Antigravity (Gemini 3.8 Flash) | Class / Cohort: Computer Science / IT (23CLC) <br> remove this part | Remove Class / Cohort metadata field across all HW01 submission documents per student request |
 | 48 | 16:56 26/09/2026 | Antigravity (Gemini 3.8 Flash) | KCPM-CQ2023/3 <br> here is the class name, please update again and create pdf for me, no need to test anything | Update exact student class name to KCPM-CQ2023/3 across all submission documents and regenerate Main_Report.pdf |
-| 49 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
+| 49 | 17:02 26/09/2026 | Antigravity (Gemini 3.8 Flash) | udpate read me with github link: [kqanGit/software-testing-hw1](https://github.com/kqanGit/software-testing-hw1) | Add official GitHub repository link (https://github.com/kqanGit/software-testing-hw1) to README.md and report manifest |
+| 50 | [Actual timestamp] | [Tool] | [Paste exact prompt] | [Purpose or artifact] |
 
 [Add a row for every additional prompt. Preserve the complete prompt text.]
 
